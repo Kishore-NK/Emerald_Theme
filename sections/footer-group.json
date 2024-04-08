@@ -1,0 +1,76 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_YGHPLf": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Company",
+            "menu": "company"
+          }
+        },
+        "link_list_H3Lj8h": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Resources",
+            "menu": "resources"
+          }
+        },
+        "link_list_HTFUP9": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Support",
+            "menu": "support"
+          }
+        },
+        "image_LyqgMQ": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-white.png",
+            "image_width": 165,
+            "alignment": "center"
+          }
+        },
+        "text_6tDkzA": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "subtext": "<h2>The Perfect Present for Your Partner<\/h2>"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_YGHPLf",
+        "link_list_H3Lj8h",
+        "link_list_HTFUP9",
+        "image_LyqgMQ",
+        "text_6tDkzA"
+      ],
+      "settings": {
+        "color_scheme": "scheme-8e3dc218-44d2-4fc8-857b-dd92b6d488b9",
+        "newsletter_enable": false,
+        "newsletter_heading": "",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
