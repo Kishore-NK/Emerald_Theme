@@ -7,17 +7,9 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "week_5_slider_pk74kd": {
-      "type": "week-5-slider",
-      "settings": {
-        "heading": "Fresh From The Source",
-        "selected_collection": "syrups"
-      }
     }
   },
   "order": [
-    "main",
-    "week_5_slider_pk74kd"
+    "main"
   ]
 }
