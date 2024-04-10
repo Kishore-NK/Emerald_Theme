@@ -8,16 +8,16 @@
         "padding_bottom": 28
       }
     },
-    "week_5_slider_pk74kd": {
+    "week_5_slider_376wkx": {
       "type": "week-5-slider",
       "settings": {
         "heading": "Fresh From The Source",
-        "selected_collection": "syrups"
+        "selected_collection": "chocolates"
       }
     }
   },
   "order": [
     "main",
-    "week_5_slider_pk74kd"
+    "week_5_slider_376wkx"
   ]
 }
