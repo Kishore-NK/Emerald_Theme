@@ -1,0 +1,68 @@
+.products-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.products-section h1 {
+    text-align: center;
+    font-size: 54px;
+}
+.products-section .splide {
+    width: 90%;
+    /* margin: 40px 0px 60px 100px; */
+    margin-top: 40px;
+    margin-right: 0px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+}
+.products-section .splide__list {
+    /* border: 1px solid red; */
+    padding-left: 40px;
+}
+.products-section .splide__slide {
+    /* border: 1px solid blue; */
+    /* width: 240px; */
+    /* width: 33.33%; */
+    width: 200px;
+}
+.products-section .splide__slide .first-section {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    height: 30px;
+    margin-top: 8px;
+}
+.products-section .splide__slide .first-section h3 {
+    font-size: 18px;
+    color: gray;
+    font-weight: 200;
+}
+.products-section .splide__slide .first-section p {
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+}
+.products-section .splide__slide .second-section {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    height: 40px;
+    margin-top: -4px;
+}
+.products-section .splide__slide .second-section h3 {
+    color: black;
+    font-weight: bold;
+}
+.products-section .splide__slide .second-section span {
+    border: 1px solid black;
+    padding: 1px 20px;
+    border-radius: 18px;
+    font-size: 12px;
+}
+
+.products-section .splide__slide img {
+    width: 100%;
+    border-radius: 20px;
+}

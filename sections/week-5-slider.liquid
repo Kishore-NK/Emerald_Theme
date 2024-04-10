@@ -1,0 +1,82 @@
+{{ "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" | stylesheet_tag }}
+<script src={{ "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"}} defer></script>
+{{ 'week-5-slider.css' | asset_url | stylesheet_tag }}
+
+<section page_width class="products-section">
+    <h1>{{ section.settings.heading }}</h1>
+    <div id="slider" class="container">
+        <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for product in collections[section.settings.selected_collection].products %}
+                  <li class="splide__slide">
+                    <div class="product-slide">
+                      <img src="{{ product.featured_image.src | img_url: 'medium' }}" height="" width="" alt="{{ product.title }}">
+                      <div class="first-section">
+                        <h3>Mapro <span style="color: black">•</span> Crush</h3>
+                        <p>{{ product.price | money }}</p>
+                      </div>
+                      <div class="second-section">
+                        <h3>{{ product.title }}</h3>
+                        <span>1000ml</span>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+                <li> </li>
+              </ul>
+            </div>
+    </div>
+    </div>
+  </section>
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var splideInstance = new Splide('#slider .splide', {
+        type       : 'slide',
+        rewind     : false,
+        perPage    : 3, // Number of products to show at a time
+        perMove    : 1,
+        autoplay   : false,
+        interval   : 3000, // Autoplay interval in milliseconds
+        gap        : 20, // Gap between slides
+        pagination : false,
+        breakpoints: {
+          768: {
+            perPage: 2
+          },
+          480: {
+            perPage: 1
+          }
+        }
+      }).mount();
+    });
+  </script> 
+
+{% schema %}
+{
+    "name": "Products Slider",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+       {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Fresh From The Source"
+       },
+      {
+        "type": "collection",
+        "id": "selected_collection",
+        "label": "Select Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Products Slider",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

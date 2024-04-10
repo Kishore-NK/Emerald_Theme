@@ -1,0 +1,246 @@
+{{ "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" | stylesheet_tag }}
+<script src={{ "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"}} defer></script>
+{{ 'custom-product-slider-tabs.css' | asset_url | stylesheet_tag }}
+
+<div class="product-slider page-width">
+    <div class="product-slider--container">
+        {% if section.settings.header != blank %}
+          <div class="product-slider--heading h1">{{ section.settings.header }}</div>
+        {% endif %}
+
+        <div class="product-slider--para-tabs">
+          {% if section.settings.para != blank %}
+            <div class="product-slider--para">{{ section.settings.para }}</div>
+          {% endif %}
+          {% if section.settings.button1 != blank and section.settings.button2 != blank %}
+            <div class="product-slider--button-tab1">{{ section.settings.button1 }}</div>
+            <div class="product-slider--button-tab2">{{ section.settings.button2 }}</div>
+          {% endif %}
+        </div>
+    </div>
+
+    <div id="slider" class="product-slider">
+      <div class="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+              <li class="splide__slide">
+                <img
+                  src="{{ section.settings.image_select1 | image_url: width: 1500 }}"
+                  loading="{{ loading }}"
+                  fetchpriority="{{ fetchpriority }}"
+                  width="{{ section.settings.image_select1.width }}"
+                  height="{{ section.settings.image_select1.width | divided_by: section.settings.image_select1.aspect_ratio | round }}"
+                  alt="{{ alt | default: section.settings.image_select1.alt | escape }}"
+                >
+              </li>
+              <li class="splide__slide">
+                <img
+                  src="{{ section.settings.image_select2 | image_url: width: 1500 }}"
+                  loading="{{ loading }}"
+                  fetchpriority="{{ fetchpriority }}"
+                  width="{{ section.settings.image_select2.width }}"
+                  height="{{ section.settings.image_select2.width | divided_by: section.settings.image_select2.aspect_ratio | round }}"
+                  alt="{{ alt | default: section.settings.image_select2.alt | escape }}"
+                >
+              </li>
+              <li class="splide__slide">
+                <img
+                  src="{{ section.settings.image_select3 | image_url: width: 1500 }}"
+                  loading="{{ loading }}"
+                  fetchpriority="{{ fetchpriority }}"
+                  width="{{ section.settings.image_select3.width }}"
+                  height="{{ section.settings.image_select3.width | divided_by: section.settings.image_select3.aspect_ratio | round }}"
+                  alt="{{ alt | default: section.settings.image_select3.alt | escape }}"
+                >
+              </li>
+              <li class="splide__slide">
+                <img
+                  src="{{ section.settings.image_select4 | image_url: width: 1500 }}"
+                  loading="{{ loading }}"
+                  fetchpriority="{{ fetchpriority }}"
+                  width="{{ section.settings.image_select4.width }}"
+                  height="{{ section.settings.image_select4.width | divided_by: section.settings.image_select4.aspect_ratio | round }}"
+                  alt="{{ alt | default: section.settings.image_select4.alt | escape }}"
+                >
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var splideInstance = new Splide('#slider .splide', {
+          type       : 'slide',
+          perPage    : 2, // Number of products to show at a time
+          autoplay   : true,
+          interval   : 3000, // Autoplay interval in milliseconds
+          gap        : 20, // Gap between slides
+          pagination : false,
+          breakpoints: {
+            768: {
+              perPage: 2
+            },
+            480: {
+              perPage: 1
+            }
+          }
+        }).mount();
+      });
+    </script>
+    
+    <style>
+      .product-slider {
+        margin-top: 20px;
+      }
+    
+      .product-slider .product {
+        text-align: center;
+      }
+
+      .splide__slide{
+        height: 200px;
+      }
+      .splide__slide img{
+        object-fit: cover;
+      }
+    
+    </style>
+</div>
+
+{% schema %}
+{
+    "name": "Product Slider with Tabs",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Heading",
+          "placeholder": "Heading",
+          "default": "NEW ARRIVALS"
+        },
+        {
+          "type": "text",
+          "id": "para",
+          "label": "Paragraph",
+          "placeholder": "Paragraph",
+          "default": "Beyond mere adornment, these pieces are made to make you feel good."
+        },
+        {
+            "type": "text",
+            "id": "button1",
+            "label": "Tab 1",
+            "default": "Earrings"
+        },
+        {
+            "type": "text",
+            "id": "button2",
+            "label": "Tab 2",
+            "default": "Necklaces"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_select1",
+            "label": "Select Image",
+            "info": "Select a Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_select2",
+            "label": "Select Image",
+            "info": "Select a Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_select3",
+            "label": "Select Image",
+            "info": "Select a Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_select4",
+            "label": "Select Image",
+            "info": "Select a Image"
+        },
+        {
+            "type": "text",
+            "id": "imageHeading",
+            "label": "Image Heading",
+            "default": "SALE OFF"
+        },
+        {
+            "type": "richtext",
+            "id": "imageDescription",
+            "label": "Enter Description",
+            "default": "<p>Advertise a promotion or a sale</p>"
+        },
+        {
+            "type": "text",
+            "id": "imageButton",
+            "label": "Image Button",
+            "default": "Shop Sale"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Enter the url"
+        },
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+        },
+        {
+            "type": "range",
+            "id": "products_to_show",
+            "min": 2,
+            "max": 25,
+            "step": 1,
+            "default": 3,
+            "label": "t:sections.featured-collection.settings.products_to_show.label"
+          },
+          {
+            "type": "range",
+            "id": "columns_desktop",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 3,
+            "label": "t:sections.featured-collection.settings.columns_desktop.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "full_width",
+            "label": "t:sections.featured-collection.settings.full_width.label",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "show_view_all",
+            "default": true,
+            "label": "t:sections.featured-collection.settings.show_view_all.label"
+          }
+    ],
+    "blocks": [
+      {
+        "name": "Slider",
+        "type": "image_picker",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_select",
+            "label": "Select Image",
+            "info": "Select a Image"
+        }
+        ]
+    }
+    ],
+    "presets": [
+        {
+          "name": "Product Slider with Tabs"
+        }
+      ]
+}
+{% endschema %}
