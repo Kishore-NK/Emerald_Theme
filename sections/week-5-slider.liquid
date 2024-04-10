@@ -2,14 +2,28 @@
 <script src={{ "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"}} defer></script>
 {{ 'week-5-slider.css' | asset_url | stylesheet_tag }}
 
-<section page_width class="products-section">
-    <h1>{{ section.settings.heading }}</h1>
-    <div id="slider" class="container">
+
+<section page_width class="products-section custom-tab-collections" style="font-family: {{ section.settings.section_font }}">
+
+    <div class="custom-tab-collections_header-wrapper">
+      <div class="h1 custom-tab-collections__heading">{{ section.settings.heading }}</div>
+      <div class="custom-tab-collections_tabs custom-border-radius">
+         {% for block in section.blocks %}
+            <span class="custom-tab-collections_collection-name {% if forloop.first %}tab__active{% endif %}">{{ block.settings.collection_name }}</span>
+         {% endfor %}
+      </div>
+   </div>
+
+   {% for block in section.blocks %}
+    <div class="tab-slider {% unless forloop.first %}hidden{% endunless %}">
+      
+      <div id="slider" class="container">
         <div class="splide">
             <div class="splide__track">
               <ul class="splide__list">
-                {% for product in collections[section.settings.selected_collection].products %}
-                  <li class="splide__slide">
+
+                {% for product in block.settings.collection.products %}
+                  <li class="splide__slide custom-border-radius">
                     <div class="product-slide">
                       <img src="{{ product.featured_image.src | img_url: 'medium' }}" height="" width="" alt="{{ product.title }}">
                       <div class="first-section">
@@ -22,37 +36,80 @@
                       </div>
                     </div>
                   </li>
-                {% endfor %}
-                <li> </li>
+               {% else %}
+                  {% for i in (1..4) %}
+                     <li class="splide__slide custom-border-radius">
+                        {{ 'product-' | append: i | placeholder_svg_tag }}
+                     </li>
+                  {% endfor %}
+               {% endfor %}
               </ul>
             </div>
     </div>
     </div>
+
+    
+    </div>
+   {% endfor %}
+
+
+    
   </section>
   
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var splideInstance = new Splide('#slider .splide', {
-        type       : 'slide',
-        rewind     : false,
-        perPage    : 3, // Number of products to show at a time
-        perMove    : 1,
-        autoplay   : false,
-        interval   : 3000, // Autoplay interval in milliseconds
-        gap        : 20, // Gap between slides
-        pagination : false,
-        breakpoints: {
-          768: {
-            perPage: 2
-          },
-          480: {
-            perPage: 1
+      var splideInstances = [];
+  
+      // Initialize Splide instances for each tab slider
+      var sliders = document.querySelectorAll('.tab-slider');
+      sliders.forEach(function (slider) {
+        var splideInstance = new Splide(slider.querySelector('.splide'), {
+          type: 'slide',
+          perPage: 3,
+          perMove: 1,
+          autoplay: false,
+          interval: 3000,
+          gap: 20,
+          pagination: false,
+          breakpoints: {
+            768: {
+              perPage: 2
+            },
+            480: {
+              perPage: 1
+            }
           }
-        }
-      }).mount();
+        }).mount();
+  
+        splideInstances.push(splideInstance);
+      });
+  
+      // Function to show the correct slider when a tab is clicked
+      function showSlider(index) {
+        sliders.forEach(function (slider, sliderIndex) {
+          if (sliderIndex === index) {
+            slider.classList.remove('hidden');
+            splideInstances[sliderIndex].refresh(); // Refresh Splide instance
+          } else {
+            slider.classList.add('hidden');
+          }
+        });
+      }
+  
+      // Add event listeners to the tab names
+      var tabNames = document.querySelectorAll('.custom-tab-collections_collection-name');
+      tabNames.forEach(function (tab, index) {
+        tab.addEventListener('click', function () {
+          tabNames.forEach(function (tab) {
+            tab.classList.remove('tab__active');
+          });
+          this.classList.add('tab__active');
+          showSlider(index);
+        });
+      });
     });
-  </script> 
+  </script>
 
 {% schema %}
 {
@@ -66,16 +123,36 @@
         "label": "Heading",
         "default": "Fresh From The Source"
        },
-      {
-        "type": "collection",
-        "id": "selected_collection",
-        "label": "Select Collection"
+       {
+        "type": "font_picker",
+        "id": "section_font",
+        "label": "Section Font",
+        "default": "Neuton"
       }
     ],
+    "blocks": [
+      {
+          "name": "Tabs",
+          "type": "product_collection",
+          "settings": [
+              {
+                  "type": "text",
+                  "id": "collection_name",
+                  "label": "Collection Name",
+                  "default": "Collections Name"
+              },    
+              {
+                  "type": "collection",
+                  "id": "collection",
+                  "label": "Collection"
+              }
+                           
+          ]
+      }
+  ],
     "presets": [
       {
-        "name": "Products Slider",
-        "category": "Custom"
+        "name": "Products Slider"
       }
     ]
   }
