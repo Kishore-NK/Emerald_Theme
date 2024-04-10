@@ -7,9 +7,17 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "week_5_slider_376wkx": {
+      "type": "week-5-slider",
+      "settings": {
+        "heading": "Fresh From The Source",
+        "selected_collection": "chocolates"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "week_5_slider_376wkx"
   ]
 }
