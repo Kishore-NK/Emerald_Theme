@@ -6,7 +6,7 @@
     "heading_scale": 100,
     "type_body_font": "tenor_sans_n4",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1400,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
@@ -229,9 +229,9 @@
           "background": "#f0f8f9",
           "background_gradient": "",
           "text": "#263d2d",
-          "button": "#fff",
+          "button": "#ffffff",
           "button_label": "#263d2d",
-          "secondary_button_label": "#fff",
+          "secondary_button_label": "#ffffff",
           "shadow": "#121212"
         }
       }

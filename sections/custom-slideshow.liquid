@@ -1,0 +1,233 @@
+{{ "custom-slideshow.css" | asset_url | stylesheet_tag }}
+
+{% style %}
+    .custom-slideshow--{{ section.id }}{
+        padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | divided_by: 2  }}px;
+    }
+    /* mobile first approach */
+    @media screen and (min-width: 749px){
+        .custom-slideshow--{{ section.id }}{
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+<div class="custom-slideshow custom-slideshow-wrapper page-width custom-slideshow--{{ section.id }}">
+Hi
+</div>
+
+{% schema %}
+{
+    "name": "Custom Slideshow",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Slider options"
+        },
+        {
+            "type": "checkbox",
+            "id": "auto_play",
+            "label": "Enable autoplay",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "show_pagination",
+            "label": "Show dots",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "show_arrows",
+            "label": "Show arrows",
+            "default": false
+        },
+        {
+            "type": "range",
+            "id": "auto_play_duration",
+            "min": 1000,
+            "max": 5000,
+            "step": 1000,
+            "unit": "sec",
+            "label": "Autoplay duration",
+            "default": 2000
+        },
+        {
+            "type": "header",
+            "content": "Animation options"
+        },
+        {
+            "type": "select",
+            "id": "slide_animation",
+            "label": "Slider animation",
+            "options": [
+                {
+                "value": "fade",
+                "label": "Fade"
+                },
+                {
+                "value": "slide",
+                "label": "Slide"
+                },
+                {
+                "value": "loop",
+                "label": "Loop"
+                }
+            ],
+            "default": "slide"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px",
+            "label": "Padding Top",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "px",
+            "label": "Padding Bottom",
+            "default": 0
+        }
+    ],
+    "blocks": [
+        {
+            "type": "Slide",
+            "name": "Slide",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Media options"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "desktop_image",
+                    "label": "Desktop Image",
+                    "info": "Recommended size: 1360 x 633 px"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image",
+                    "label": "Mobile Image",
+                    "info": "Recommended size: 360 x 282 px"
+                },
+                {
+                    "type": "header",
+                    "content": "Text customization"
+                },
+                {
+                    "type": "text",
+                    "id": "pre_heading",
+                    "label": "Pre heading",
+                    "default": "Wome"
+                },
+                {
+                    "type": "richtext",
+                    "id": "heading",
+                    "label": "Heading",
+                    "default": "<p></p>"
+                },
+                {
+                    "type": "text",
+                    "id": "button_label",
+                    "label": "Button Label",
+                    "default": "Explore more"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "header",
+                    "content": "Content alignment customization"
+                },
+                {
+                    "type": "select",
+                    "id": "desktop_content_position",
+                    "label": "Desktop content position",
+                    "options": [
+                        {
+                        "value": "top-left",
+                        "label": "Top Left"
+                        },
+                        {
+                        "value": "top-center",
+                        "label": "Top Center"
+                        },
+                        {
+                        "value": "top-right",
+                        "label": "Top Right"
+                        },
+                        {
+                        "value": "center-left",
+                        "label": "Center Left"
+                        },
+                        {
+                        "value": "center-center",
+                        "label": "Center Center"
+                        },
+                        {
+                        "value": "center-right",
+                        "label": "Center Right"
+                        },
+                        {
+                        "value": "bottom-left",
+                        "label": "Bottom Left"
+                        },
+                        {
+                        "value": "bottom-center",
+                        "label": "Bottom Center"
+                        },
+                        {
+                        "value": "bottom-right",
+                        "label": "Bottom Right"
+                        }
+                    ],
+                    "default": "center-center"
+                },
+                {
+                    "type": "select",
+                    "id": "desktop_content_alignment",
+                    "label": "Desktop content alignment",
+                    "options": [
+                        {
+                        "value": "left",
+                        "label": "Left"
+                        },
+                        {
+                        "value": "center",
+                        "label": "Center"
+                        },
+                        {
+                        "value": "right",
+                        "label": "Right"
+                        }
+                    ],
+                    "default": "center"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Slideshow"
+        }
+    ]
+}
+{% endschema %}
