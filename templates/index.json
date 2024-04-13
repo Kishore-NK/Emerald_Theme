@@ -309,20 +309,31 @@
         "padding_bottom": 36
       }
     },
-    "image_banner_wR96bf": {
-      "type": "image-banner",
+    "custom_hotspot_section_f4AQGg": {
+      "type": "custom-hotspot-section",
+      "blocks": {
+        "product_C84CFQ": {
+          "type": "product",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/Hotspot_image_88c55018-8884-45e6-b41c-9f0b632fb67c.png",
+            "primary_left_position": 29,
+            "primary_top_position": 23,
+            "primary_product": "18k-gold-double-initial-custom-ring",
+            "secondary_left_position": 48,
+            "secondary_top_position": 12,
+            "secondary_product": "onyx-torus-toggle-rolo-chain-necklace",
+            "third_left_position": 77,
+            "third_top_position": 22,
+            "third_product": "retro-inspired-disco-chain-bracelet"
+          }
+        }
+      },
+      "block_order": [
+        "product_C84CFQ"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Hotspot_image.png",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "padding_top": 30,
+        "padding_bottom": 30
       }
     },
     "featured_collection_iUP4ey": {
@@ -710,7 +721,7 @@
     "collection_list_ji3NCU",
     "rich_text_TnpAgf",
     "featured_collection_GPzePD",
-    "image_banner_wR96bf",
+    "custom_hotspot_section_f4AQGg",
     "featured_collection_iUP4ey",
     "multirow_XXHWFA",
     "rich_text_BkWw7Y",

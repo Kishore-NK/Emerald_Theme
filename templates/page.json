@@ -10,50 +10,6 @@
     },
     "week_5_slider_376wkx": {
       "type": "week-5-slider",
-      "blocks": {
-        "product_collection_7zQ9yw": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Syrups",
-            "collection": "syrups"
-          }
-        },
-        "product_collection_DbQBVg": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Jam",
-            "collection": "jams-and-spreads"
-          }
-        },
-        "product_collection_87gR9g": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Fruit Chews",
-            "collection": "fruit-chews"
-          }
-        },
-        "product_collection_3qn7qj": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Snacks",
-            "collection": "snacks"
-          }
-        },
-        "product_collection_73mNd8": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Chocolates",
-            "collection": "chocolates"
-          }
-        }
-      },
-      "block_order": [
-        "product_collection_7zQ9yw",
-        "product_collection_DbQBVg",
-        "product_collection_87gR9g",
-        "product_collection_3qn7qj",
-        "product_collection_73mNd8"
-      ],
       "settings": {
         "heading": "Fresh From The Source"
       }
