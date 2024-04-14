@@ -398,46 +398,40 @@
         "padding_bottom": 36
       }
     },
-    "rich_text_BkWw7Y": {
-      "type": "rich-text",
+    "custom_logo_based_slider_93ff6H": {
+      "type": "custom-logo-based-slider",
       "blocks": {
-        "heading_hQdPjt": {
-          "type": "heading",
+        "text_slider_iwWFR9": {
+          "type": "text_slider",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "slider_text": "“A GREAT STYLE IS ALWAYS UPLIFTING, IT CAN MAKE YOU FEEL CONFIDENT, GLAMOROUS, AND SEXY. WHAT ARE YOU WAITING FOR?",
+            "slider_image": "shopify:\/\/shop_images\/logo_slider1.png"
           }
         },
-        "button_JJ7Jp4": {
-          "type": "button",
+        "text_slider_pbpbeY": {
+          "type": "text_slider",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "slider_text": "“WE MUST BUY JEWELRY; IT IDENTIFIES US WITH OUR TRIBE, JUST AS BODY PIERCING IDENTIFIES THOSE OF A DIFFERENT TRIBE.”",
+            "slider_image": "shopify:\/\/shop_images\/logo_slider2.png"
           }
         },
-        "text_mN74CL": {
-          "type": "text",
+        "text_slider_T6xzTj": {
+          "type": "text_slider",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "slider_text": "“WEARING JEWELLERY ON THE DAY NAME ENDING WITH Y IS THE SIGN, THAT YOU HAVE GOOD JEWELRY COLLECTION.”",
+            "slider_image": "shopify:\/\/shop_images\/logo_slider3.png"
           }
         }
       },
       "block_order": [
-        "heading_hQdPjt",
-        "button_JJ7Jp4",
-        "text_mN74CL"
+        "text_slider_iwWFR9",
+        "text_slider_pbpbeY",
+        "text_slider_T6xzTj"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-897c26e0-5e35-4e23-940f-db3c2133c9f8",
-        "full_width": false,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "heading": "IN THE PRESS",
+        "padding_top": 30,
+        "padding_bottom": 30
       }
     },
     "custom_blog_section_LkGR6p": {
@@ -725,7 +719,7 @@
     "custom_hotspot_section_f4AQGg",
     "featured_collection_iUP4ey",
     "multirow_XXHWFA",
-    "rich_text_BkWw7Y",
+    "custom_logo_based_slider_93ff6H",
     "custom_blog_section_LkGR6p",
     "multicolumn_LipV4R",
     "multicolumn_9RtG3Y",
