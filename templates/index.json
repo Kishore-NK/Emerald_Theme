@@ -440,21 +440,22 @@
         "padding_bottom": 52
       }
     },
-    "featured_blog_3MBxTw": {
-      "type": "featured-blog",
+    "custom_blog_section_LkGR6p": {
+      "type": "custom-blog-section",
       "settings": {
         "heading": "LATEST NEWS",
         "heading_size": "h1",
+        "paragraph": "Beyond mere adornment, these pieces are made to make you feel good.",
         "blog": "emerald-1",
         "post_limit": 3,
         "columns_desktop": 3,
-        "color_scheme": "scheme-1",
+        "color_scheme": "",
         "show_image": true,
         "show_date": true,
         "show_author": false,
-        "show_view_all": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_view_all": true,
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
     "multicolumn_LipV4R": {
@@ -725,7 +726,7 @@
     "featured_collection_iUP4ey",
     "multirow_XXHWFA",
     "rich_text_BkWw7Y",
-    "featured_blog_3MBxTw",
+    "custom_blog_section_LkGR6p",
     "multicolumn_LipV4R",
     "multicolumn_9RtG3Y",
     "multicolumn_X69bCj",
