@@ -24,11 +24,35 @@
             "collection_name": "Jams",
             "collection": "jams-and-spreads"
           }
+        },
+        "product_collection_EjABQh": {
+          "type": "product_collection",
+          "settings": {
+            "collection_name": "Fruit chews",
+            "collection": "fruit-chews"
+          }
+        },
+        "product_collection_rFz8im": {
+          "type": "product_collection",
+          "settings": {
+            "collection_name": "Snacks",
+            "collection": "snacks"
+          }
+        },
+        "product_collection_zDqFC7": {
+          "type": "product_collection",
+          "settings": {
+            "collection_name": "Chocolates",
+            "collection": "chocolates"
+          }
         }
       },
       "block_order": [
         "product_collection_e8PnAf",
-        "product_collection_k6DmNJ"
+        "product_collection_k6DmNJ",
+        "product_collection_EjABQh",
+        "product_collection_rFz8im",
+        "product_collection_zDqFC7"
       ],
       "settings": {
         "heading": "Fresh From The Source"
