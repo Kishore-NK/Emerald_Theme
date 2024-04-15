@@ -1,0 +1,183 @@
+{{ "custom-image-before-after.css" | asset_url | stylesheet_tag }}
+
+{% style %}
+    .custom-padding--{{ section.id }}{
+        padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | divided_by: 2  }}px;
+    }
+    /* mobile first approach */
+    @media screen and (min-width: 749px){
+        .custom-padding--{{ section.id }}{
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+<style>
+    .before-after-comparison {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+  
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .before-image,
+    .after-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  
+    .handle {
+      position: absolute;
+      top: 0;
+      left: 50%; /* Initially center the handle */
+      transform: translateX(-50%); /* Center the handle horizontally */
+      width: 2px;
+      height: 100%;
+      background-color: #fff;
+      z-index: 1;
+      cursor: ew-resize;
+    }
+  </style>
+
+<div class="image-before-after page-width custom-padding--{{ section.id }}">
+    <div class="image-before-after--container">
+        <div class="image-before-after--content">
+            {% if section.settings.inline_badge != blank %} 
+                <span>{{ section.settings.inline_badge }}</span>
+            {% endif %}
+            {% if section.settings.heading != blank %} 
+                <h2>{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.para != blank %} 
+                <p>{{ section.settings.para }}</p>
+            {% endif %}            
+        </div>
+        <div class="image-before-after--image">
+
+            <div class="before-after-comparison">
+                <div class="container">
+                  <div class="image-container">
+                    <img src="{{ section.settings.image_before | img_url: 'master' }}" class="before-image" alt="Before Image" height="" width="">
+                    <img src="{{ section.settings.image_after | img_url: 'master' }}" class="after-image" alt="After Image" height="" width="">
+                    <div class="handle"></div> <!-- Move the handle inside the container -->
+                  </div>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const handle = document.querySelector('.handle');
+      const container = document.querySelector('.container');
+      let isDragging = false;
+  
+      handle.addEventListener('mousedown', function(e) {
+        isDragging = true;
+      });
+  
+      container.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+  
+        const containerRect = container.getBoundingClientRect();
+        const xPos = e.clientX - containerRect.left;
+        const containerWidth = container.offsetWidth;
+        let handlePosition = (xPos / containerWidth) * 100;
+  
+        // Ensure handle stays within container bounds
+        handlePosition = Math.max(0, Math.min(handlePosition, 100));
+  
+        handle.style.left = handlePosition + '%';
+        document.querySelector('.before-image').style.width = handlePosition + '%';
+        document.querySelector('.after-image').style.width = (100 - handlePosition) + '%';
+      });
+  
+      document.addEventListener('mouseup', function(e) {
+        isDragging = false;
+      });
+  
+      document.addEventListener('mouseleave', function(e) {
+        isDragging = false;
+      });
+    });
+  </script>
+
+{% schema %}
+    {
+        "name": "Image before after",
+        "tag": "section",
+        "class": "section",
+        "settings": [
+            {
+                "type": "text",
+                "id": "inline_badge",
+                "label": "Inline badge"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "text",
+                "id": "para",
+                "label": "Paragraph"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_before",
+                "label": "Select before image"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_after",
+                "label": "Select after image"
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "padding_top",
+                "min": 0,
+                "max": 100,
+                "step": 10,
+                "unit": "px",
+                "label": "Padding Top",
+                "default": 30
+            },
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "min": 0,
+                "max": 100,
+                "step": 10,
+                "unit": "px",
+                "label": "Padding Bottom",
+                "default": 30
+            }
+        ],
+        "presets": [
+            {
+                "name": "Image before after"
+            }
+        ]
+    }
+{% endschema %}
