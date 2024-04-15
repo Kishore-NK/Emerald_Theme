@@ -10,6 +10,26 @@
     },
     "week_5_slider_376wkx": {
       "type": "week-5-slider",
+      "blocks": {
+        "product_collection_e8PnAf": {
+          "type": "product_collection",
+          "settings": {
+            "collection_name": "Syrups",
+            "collection": "syrups"
+          }
+        },
+        "product_collection_k6DmNJ": {
+          "type": "product_collection",
+          "settings": {
+            "collection_name": "Jams",
+            "collection": "jams-and-spreads"
+          }
+        }
+      },
+      "block_order": [
+        "product_collection_e8PnAf",
+        "product_collection_k6DmNJ"
+      ],
       "settings": {
         "heading": "Fresh From The Source"
       }
