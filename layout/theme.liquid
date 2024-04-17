@@ -254,8 +254,7 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
     {{ "splide.min.css" | asset_url | stylesheet_tag }}
-    <script src={{ "splide.min.js" | asset_url }} defer></script>    
-
+  
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
@@ -352,5 +351,8 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script src={{ "splide.min.js" | asset_url }}></script>
+
   </body>
 </html>

@@ -1,4 +1,5 @@
 {{ "custom-slideshow.css" | asset_url | stylesheet_tag }}
+<script src="{{ 'component-splide.js' | asset_url }}" defer></script>
 
 {% style %}
     .custom-slideshow--{{ section.id }}{
@@ -14,8 +15,32 @@
     }
 {% endstyle %}
 
+{% capture splide-options %}
+    {
+        "type": "{{ section.settings.slide_animation }}",
+        "autoplay" : {{ section.settings.auto_play }},
+        "interval" : {{ section.settings.auto_play_duration }},
+        "pagination": {{ section.settings.show_pagination }},
+        "arrows" : {{ section.settings.show_arrows }},
+        "rewind" : {{ section.settings.rewind }}
+    }
+{% endcapture %}
+
 <div class="custom-slideshow custom-slideshow-wrapper page-width custom-slideshow--{{ section.id }}">
-Hi
+    <splider-component>
+    <div class="splide" data-slider-options='{{ splide-options }}' >
+        <div class="splide__track">
+            <ul class="splide__list ">
+               {% for block in section.blocks %}
+                  <li class="splide__slide">
+                    <img src="{{ block.settings.desktop_image | img_url: 'medium' }}" height="" width="" alt="">
+                  </li>
+               {% endfor %}
+            </ul>
+         </div>            
+        </div>
+    </splider-component>
+
 </div>
 
 {% schema %}
@@ -38,6 +63,12 @@ Hi
             "type": "checkbox",
             "id": "show_pagination",
             "label": "Show dots",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "rewind",
+            "label": "Rewind",
             "default": false
         },
         {

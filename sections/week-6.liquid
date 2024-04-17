@@ -1,0 +1,288 @@
+{{ "week-6.css" | asset_url | stylesheet_tag }}
+<script src="{{ 'component-splide.js' | asset_url }}" defer></script>
+
+{% style %}
+    .custom-padding--{{ section.id }}{
+        padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | divided_by: 2  }}px;
+        background: {{ section.settings.color_background }};
+    }
+    .bg-card {
+        background: {{ section.blocks.first.settings.bg_card }};
+    }
+    .active-slide{
+        background: {{ section.blocks.first.settings.bg_active_card }};
+    }
+    /* mobile first approach */
+    @media screen and (min-width: 749px){
+        .custom-padding--{{ section.id }}{
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+{% capture splide-options %}
+    {
+        "type": "{{ section.settings.slide_animation }}",
+        "autoplay" : {{ section.settings.auto_play }},
+        "interval" : {{ section.settings.auto_play_duration }},
+        "pagination": {{ section.settings.show_pagination }},
+        "arrows" : {{ section.settings.show_arrows }},
+        "rewind" : {{ section.settings.rewind }},
+        "perPage" : 1.5,
+        "perMove" : 1,
+        "gap" : "20px",
+        "breakpoints" : {
+            "768": {
+              "perPage": 1
+            },
+            "480": {
+              "perPage": 1
+            }
+          }
+    }
+{% endcapture %}
+
+<div class="testimonial-slider page-width custom-padding--{{ section.id }}">
+    <div class="testimonial-slider--main-image">
+        {% for block in section.blocks %}
+            <img
+              src="{{ block.settings.main_image | image_url }}"
+              alt="Slide Image"
+              height=""
+              width=""
+              class="desktopimages"
+            >
+        {% endfor %}
+    </div>
+    <div class="testimonial-slider--main-content-slider">
+        <div class="testimonial-slider--heading-desc">
+            {% if section.settings.section_heading != blank %} 
+            <h2 class="testimonial-slider--heading">{{ section.settings.section_heading }}</h2>
+            {% endif %}
+            {% if section.settings.section_description != blank %} 
+            <p class="testimonial-slider--desc">{{ section.settings.section_description }}</p>
+            {% endif %}
+        </div>
+        <splider-component>
+            <div class="splide" id="testimonial-slider" data-slider-options='{{ splide-options }}' >
+                <div class="splide__track">
+                    <ul class="splide__list ">
+                    {% for block in section.blocks %}
+                        <li class="splide__slide bg-card">
+                            <div class="testimonial-slider--slide-content">
+                                {% if block.settings.testimonial_desc != blank %} 
+                                <p class="testimonial-slider--slide-para">{{ block.settings.testimonial_desc }}</p>
+                                {% endif %}
+
+                                <div class="testimonial-slider--author-content">
+                                    <div class="testimonial-slider--author-image">
+                                        <img src="{{ block.settings.author_image | img_url: 'master' }}" height="" width="" alt="Author Image">
+                                    </div>
+                                    <div class="testimonial-slider--author-name-title">
+                                        {% if block.settings.author_name != blank %} 
+                                        <h3 class="testimonial-slider--author-name">{{ block.settings.author_name }}</h3>
+                                        {% endif %}
+                                        {% if block.settings.author_title != blank %} 
+                                        <p class="testimonial-slider--author-title">{{ block.settings.author_title }}</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>            
+            </div>
+        </splider-component>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Testimonial slider",
+        "tag": "section",
+        "class": "section",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Background color"
+            },
+            {
+                "type": "color_background",
+                "id": "color_background",
+                "label": "Background color"
+            },
+            {
+                "type": "header",
+                "content": "Section details"
+            },
+            {
+                "type": "text",
+                "id": "section_heading",
+                "label": "Section heading",
+                "default": "Testimonials"
+            },
+            {
+                "type": "text",
+                "id": "section_description",
+                "label": "Section description",
+                "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "type": "header",
+                "content": "Slider options"
+            },
+            {
+                "type": "checkbox",
+                "id": "auto_play",
+                "label": "Enable autoplay",
+                "default": false
+            },
+            {
+                "type": "checkbox",
+                "id": "show_pagination",
+                "label": "Show dots",
+                "default": false
+            },
+            {
+                "type": "checkbox",
+                "id": "rewind",
+                "label": "Rewind",
+                "default": false
+            },
+            {
+                "type": "checkbox",
+                "id": "show_arrows",
+                "label": "Show arrows",
+                "default": false
+            },
+            {
+                "type": "range",
+                "id": "auto_play_duration",
+                "min": 1000,
+                "max": 5000,
+                "step": 1000,
+                "unit": "sec",
+                "label": "Autoplay duration",
+                "default": 2000
+            },
+            {
+                "type": "header",
+                "content": "Animation options"
+            },
+            {
+                "type": "select",
+                "id": "slide_animation",
+                "label": "Slider animation",
+                "options": [
+                    {
+                    "value": "fade",
+                    "label": "Fade"
+                    },
+                    {
+                    "value": "slide",
+                    "label": "Slide"
+                    },
+                    {
+                    "value": "loop",
+                    "label": "Loop"
+                    }
+                ],
+                "default": "slide"
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "padding_top",
+                "min": 0,
+                "max": 100,
+                "step": 10,
+                "unit": "px",
+                "label": "Padding top",
+                "default": 30
+            },
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "min": 0,
+                "max": 100,
+                "step": 10,
+                "unit": "px",
+                "label": "Padding bottom",
+                "default": 30
+            }
+        ],
+        "blocks": [
+            {
+                "type": "Slide",
+                "name": "Slide",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Media options"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "main_image",
+                        "label": "Main Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "author_image",
+                        "label": "Author Image"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Text customization"
+                    },
+                    {
+                        "type": "text",
+                        "id": "testimonial_desc",
+                        "label": "Testimonial description",
+                        "default": "“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  “"
+                    },
+                    {
+                        "type": "text",
+                        "id": "author_name",
+                        "label": "Author name",
+                        "default": "Mr. John Doe"
+                    },
+                    {
+                        "type": "text",
+                        "id": "author_title",
+                        "label": "Author title",
+                        "default": "Clients"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Background color for card"
+                    },
+                    {
+                        "type": "color_background",
+                        "id": "bg_card",
+                        "label": "Background color for card"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Background color for active card"
+                    },
+                    {
+                        "type": "color_background",
+                        "id": "bg_active_card",
+                        "label": "Background color for Active card"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+              "name": "Testimonial slider"
+            }
+        ]
+    }
+{% endschema %}

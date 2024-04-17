@@ -1,0 +1,53 @@
+.testimonial-newsletter {
+    /* border: 1px solid red; */
+    background-color: #EDFF84;
+    text-align: center;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.testimonial-newsletter h2 {
+    font-size: 48px;
+    color: #333;
+}
+.testimonial-newsletter-form {
+    margin-bottom: 34px;
+    margin-top: -24px;
+}
+
+.testimonial-newsletter-form input[type="email"] {
+    width: 24%;
+    padding: 12px;
+    padding-left: 14px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.testimonial-newsletter button {
+    background-color: #5C6E4A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 749px) {
+    .testimonial-newsletter form {
+        display: flex;
+        flex-direction: column;
+    }
+    .testimonial-newsletter input[type="email"] {
+        width: 90%;
+    }
+    .testimonial-newsletter h2 {
+        font-size: 36px
+    }
+    .testimonial-newsletter button {
+        margin-top: 10px;
+        width: 90%;
+    }
+}
