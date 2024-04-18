@@ -2,44 +2,43 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
+    "custom_announcement_bar_pNk7Ci": {
+      "type": "custom-announcement-bar",
       "blocks": {
-        "announcement_V6icVr": {
-          "type": "announcement",
+        "slide_BeGkVk": {
+          "type": "slide",
           "settings": {
-            "text": "Free shipping all orders on over $60",
-            "link": ""
+            "announcement": "Free shipping all orders over $60",
+            "color": "#de544b"
           }
         },
-        "announcement-bar-0": {
-          "type": "announcement",
+        "slide_e3YLjF": {
+          "type": "slide",
           "settings": {
-            "text": "Returns extended to 60 days",
-            "link": ""
+            "announcement": "Returns extended to 60 days",
+            "color": "#4e6756"
           }
         },
-        "announcement_PzwgNq": {
-          "type": "announcement",
+        "slide_x9REmG": {
+          "type": "slide",
           "settings": {
-            "text": "15% off on all products",
-            "link": ""
+            "announcement": "15% off on all products",
+            "color": "#4f443b"
           }
         }
       },
       "block_order": [
-        "announcement_V6icVr",
-        "announcement-bar-0",
-        "announcement_PzwgNq"
+        "slide_BeGkVk",
+        "slide_e3YLjF",
+        "slide_x9REmG"
       ],
       "settings": {
-        "color_scheme": "scheme-517cc595-a0ad-408b-a06f-8761a6ce3906",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "auto_play": true,
+        "show_pagination": false,
+        "show_arrows": true,
+        "auto_play_duration": 4,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "header": {
@@ -62,7 +61,7 @@
     }
   },
   "order": [
-    "announcement-bar",
+    "custom_announcement_bar_pNk7Ci",
     "header"
   ]
 }

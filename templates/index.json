@@ -1,58 +1,47 @@
 {
   "sections": {
-    "slideshow_gKDVEN": {
-      "type": "slideshow",
+    "custom_hero_section_QDQqmV": {
+      "type": "custom-hero-section",
       "blocks": {
-        "slide_LCwxxM": {
+        "slide_WtTcBR": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home_banner_video_image.png",
-            "heading": "Add a tagline",
-            "heading_size": "h2",
-            "subheading": "DISCOVER THE PERFECT ACCESSORY FOR YOUR STYLE",
-            "button_label": "Shop Now",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "scheme-4",
-            "text_alignment_mobile": "center"
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/5915fba7e49e419886a3689ac1cdd535\/5915fba7e49e419886a3689ac1cdd535.HD-1080p-4.8Mbps-12891231.mp4",
+            "desktop_image": "shopify:\/\/shop_images\/download_b5db0818-ad27-4edb-bc7f-774367b68d0a.webp",
+            "caption_text": "Add a tagline",
+            "rich_text": "<p>DISCOVER THE PERFECT ACCESSORY FOR YOUR STYLE<\/p>",
+            "button_text": "Shop Now",
+            "button_url": "",
+            "destop_content_position": "center-center",
+            "destop_content_alignment": "center"
           }
         },
-        "slide_JLAqwr": {
+        "slide_QtYy9g": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home_banner_image.png",
-            "heading": "NEW COLLECTION",
-            "heading_size": "h2",
-            "subheading": "EVERY PIECE IS A UNIQUE, ONE OF A KIND MASTERPIECE",
-            "button_label": "Shop the collection",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "scheme-4",
-            "text_alignment_mobile": "center"
+            "video_url": "",
+            "desktop_image": "shopify:\/\/shop_images\/slide-01_2160x1125_crop_center_8ccdf188-6c22-4093-b484-47c0622f6159.webp",
+            "caption_text": "NEW COLLECTION",
+            "rich_text": "<p>EVERY PIECE IS A UNIQUE, ONE OF A KIND MASTERPIECE<\/p>",
+            "button_text": "Shop Now",
+            "button_url": "",
+            "destop_content_position": "center-center",
+            "destop_content_alignment": "center"
           }
         }
       },
       "block_order": [
-        "slide_LCwxxM",
-        "slide_JLAqwr"
+        "slide_WtTcBR",
+        "slide_QtYy9g"
       ],
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 3,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "auto_play": false,
+        "show_arrows": false,
+        "show_pagination": true,
+        "auto_play_duration": 2000,
+        "slide_animation": "slide",
+        "padding_top": 0,
+        "padding_bottom": 40
       }
     },
     "custom_product_slider_tabs_3azgtD": {
@@ -94,33 +83,39 @@
         "padding_bottom": 80
       }
     },
-    "multicolumn_4tCPnJ": {
-      "type": "multicolumn",
+    "custom_static_banner_j9Rytd": {
+      "type": "custom-static-banner",
       "blocks": {
-        "column_mXBF73": {
+        "column_NzNgCE": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/section_image1.png",
+            "image": "shopify:\/\/shop_images\/section_image1_ed783382-8305-4aa4-bccc-d34729bde8ae.png",
             "title": "BESPOKE ENGAGEMENT RINGS",
+            "title_color": "#263d2d",
             "text": "<p>Looking to get the perfect engagement ring? Browse hundreds of ring styles find the perfect engagement ring today.<\/p>",
+            "text_color": "#3b5342",
             "link_label": "Browse Rings",
-            "link": ""
+            "link_color": "#8d5d48",
+            "link": "shopify:\/\/collections\/rings"
           }
         },
-        "column_K6eqmf": {
+        "column_GMzLUp": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/section_image2.png",
+            "image": "shopify:\/\/shop_images\/section_image2_1845111c-3fad-4f09-bf5d-559fa72a4670.png",
             "title": "DANGLE & DROP EARRINGS",
+            "title_color": "#263d2d",
             "text": "<p>These are simple enough for everyday wear and an iconic symbol you’ll want to show off for years to come.<\/p>",
+            "text_color": "#3b5342",
             "link_label": "Browse Earrings",
-            "link": ""
+            "link_color": "#8d5d48",
+            "link": "shopify:\/\/collections\/earrings"
           }
         }
       },
       "block_order": [
-        "column_mXBF73",
-        "column_K6eqmf"
+        "column_NzNgCE",
+        "column_GMzLUp"
       ],
       "settings": {
         "title": "",
@@ -139,86 +134,89 @@
         "padding_bottom": 36
       }
     },
-    "rich_text_Kmb7zD": {
-      "type": "rich-text",
+    "custom_scroll_text_E7Pi4L": {
+      "type": "custom-scroll-text",
       "blocks": {
-        "heading_MyjGd3": {
-          "type": "heading",
+        "block_VeJnBy": {
+          "type": "block",
           "settings": {
-            "heading": "<strong>SHOP THE LATEST TRENDS  <\/strong>",
-            "heading_size": "hxl"
+            "text": "Jewelryize me",
+            "checkbox": false
+          }
+        },
+        "block_Re8ADN": {
+          "type": "block",
+          "settings": {
+            "text": "You’ll love it",
+            "checkbox": false
+          }
+        },
+        "block_fBrLDH": {
+          "type": "block",
+          "settings": {
+            "text": "",
+            "checkbox": false
+          }
+        },
+        "block_r8ADdW": {
+          "type": "block",
+          "settings": {
+            "text": "",
+            "checkbox": false
           }
         }
       },
       "block_order": [
-        "heading_MyjGd3"
+        "block_VeJnBy",
+        "block_Re8ADN",
+        "block_fBrLDH",
+        "block_r8ADdW"
       ],
+      "disabled": true,
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "bg_color": "",
+        "padding": 16,
+        "scroll_time": "50",
+        "font_color": "rgba(0,0,0,0)",
+        "font_size": 80,
+        "pause_text": "initial",
+        "image_picker": "shopify:\/\/shop_images\/download.webp"
       }
     },
-    "collection_list_kQwhzW": {
-      "type": "collection-list",
+    "custom_collection_list_qaXU9f": {
+      "type": "custom-collection-list",
       "blocks": {
-        "featured_collection_PtrV4j": {
+        "featured_collection_migrNV": {
           "type": "featured_collection",
           "settings": {
             "collection": "bracelets"
           }
         },
-        "featured_collection_xWRew8": {
+        "featured_collection_gHtfJd": {
           "type": "featured_collection",
           "settings": {
             "collection": "necklaces"
           }
         },
-        "featured_collection_8az6Q6": {
+        "featured_collection_TCwQYq": {
           "type": "featured_collection",
           "settings": {
             "collection": "earrings"
           }
         },
-        "featured_collection_AAErL7": {
+        "featured_collection_mWd7C3": {
           "type": "featured_collection",
           "settings": {
             "collection": "diamonds"
           }
-        }
-      },
-      "block_order": [
-        "featured_collection_PtrV4j",
-        "featured_collection_xWRew8",
-        "featured_collection_8az6Q6",
-        "featured_collection_AAErL7"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
-    "collection_list_ji3NCU": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_wz4hVq": {
+        },
+        "featured_collection_dmkrzb": {
           "type": "featured_collection",
           "settings": {
             "collection": "pearls"
           }
         },
-        "featured_collection_YrMLVN": {
+        "featured_collection_dX4BYk": {
           "type": "featured_collection",
           "settings": {
             "collection": "rings"
@@ -226,85 +224,66 @@
         }
       },
       "block_order": [
-        "featured_collection_wz4hVq",
-        "featured_collection_YrMLVN"
+        "featured_collection_migrNV",
+        "featured_collection_gHtfJd",
+        "featured_collection_TCwQYq",
+        "featured_collection_mWd7C3",
+        "featured_collection_dmkrzb",
+        "featured_collection_dX4BYk"
       ],
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "color_scheme": "",
-        "show_view_all": false,
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
+        "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "rich_text_TnpAgf": {
-      "type": "rich-text",
+    "custom_richtext_animation_wrUCe9": {
+      "type": "custom-richtext-animation",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "custom_products_CdLJkf": {
+      "type": "custom-products",
       "blocks": {
-        "caption_yPCccy": {
-          "type": "caption",
+        "product_RPmEwK": {
+          "type": "product",
           "settings": {
-            "caption": "Add a tagline",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "large"
+            "product": "24k-gold-plated-double-half-circle-ring",
+            "card_color": "#fcf9f6",
+            "Quick_view_button": true
           }
         },
-        "heading_tTJJrz": {
-          "type": "heading",
+        "product_XFR89m": {
+          "type": "product",
           "settings": {
-            "heading": "Timeless, classic and elegant",
-            "heading_size": "h0"
+            "product": "18k-gold-mel-ring-in-green-and-red",
+            "card_color": "#fcf9f6",
+            "Quick_view_button": true
           }
         },
-        "text_jXJLUC": {
-          "type": "text",
+        "product_CUzE6w": {
+          "type": "product",
           "settings": {
-            "text": "<p>When choosing timeless jewelry, it is important to consider factors such as design, quality, and materials to ensure that the piece will withstand the test of time and retain its value and beauty for years to come.<\/p>"
+            "product": "14k-gold-mini-alidia-cubic-zirconia-ring",
+            "card_color": "#fcf9f6",
+            "Quick_view_button": true
           }
         }
       },
       "block_order": [
-        "caption_yPCccy",
-        "heading_tTJJrz",
-        "text_jXJLUC"
+        "product_RPmEwK",
+        "product_XFR89m",
+        "product_CUzE6w"
       ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "featured_collection_GPzePD": {
-      "type": "featured-collection",
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "",
-        "products_to_show": 3,
-        "columns_desktop": 3,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
         "color_scheme": "",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -336,66 +315,102 @@
         "padding_bottom": 30
       }
     },
-    "featured_collection_iUP4ey": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "CUSTOMER REVIEWS",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "",
-        "products_to_show": 5,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multirow_XXHWFA": {
-      "type": "multirow",
+    "custom_customer_section_qR3RL8": {
+      "type": "custom-customer-section",
       "blocks": {
-        "row_mdcyx6": {
-          "type": "row",
+        "slide_krCLbP": {
+          "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_filter.png",
-            "caption": "Custom Design",
-            "heading": "THE DIAMONDS ARE REAL BUT THE MAGIC IS IN YOUR EYES",
-            "text": "<p>Luxury jewelry is a high-end category of jewelry that is often made of precious metals and gems, and is known for its exceptional craftsmanship and quality. This type of jewelry is often associated with elegance and status.<\/p>",
-            "button_label": "",
-            "button_link": ""
+            "product_url": "shopify:\/\/products\/the-curator-24k-gold-plated-amulet",
+            "rating_range_review": 4.5,
+            "comment": "Amazing",
+            "text_area": "",
+            "author_name": "",
+            "content_position_desktop": "center"
+          }
+        },
+        "slide_GEt6qh": {
+          "type": "slide",
+          "settings": {
+            "product_url": "",
+            "rating_range_review": 4.5,
+            "comment": "Amazing",
+            "text_area": "",
+            "author_name": "",
+            "content_position_desktop": "center"
+          }
+        },
+        "slide_pMHtqe": {
+          "type": "slide",
+          "settings": {
+            "product_url": "",
+            "rating_range_review": 4.5,
+            "comment": "Amazing",
+            "text_area": "",
+            "author_name": "",
+            "content_position_desktop": "center"
+          }
+        },
+        "slide_TTP7EK": {
+          "type": "slide",
+          "settings": {
+            "product_url": "",
+            "rating_range_review": 4.5,
+            "comment": "Amazing",
+            "text_area": "",
+            "author_name": "",
+            "content_position_desktop": "center"
           }
         }
       },
       "block_order": [
-        "row_mdcyx6"
+        "slide_krCLbP",
+        "slide_GEt6qh",
+        "slide_pMHtqe",
+        "slide_TTP7EK"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading_customer_review": "Customer Review",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "custom_before_after_X4AGPR": {
+      "type": "custom-before-after",
+      "blocks": {
+        "badge_FGWphw": {
+          "type": "badge",
+          "settings": {
+            "badge": "Custom Design"
+          }
+        },
+        "heading_wTAncX": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>THE DIAMONDS ARE REAL BUT THE MAGIC IS IN YOUR EYES<\/p>"
+          }
+        },
+        "text_AtnTjy": {
+          "type": "text",
+          "settings": {
+            "discription": "<p>Luxury jewelry is a high-end category of jewelry that is often made of precious metals and gems, and is known for its exceptional craftsmanship and quality. This type of jewelry is often associated with elegance and status.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_FGWphw",
+        "heading_wTAncX",
+        "text_AtnTjy"
       ],
       "settings": {
-        "image_height": "medium",
-        "desktop_image_width": "medium",
-        "heading_size": "h1",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
+        "image_before": "shopify:\/\/shop_images\/image_filter_before_d4fa6b14-fc80-44bc-9f6e-0349feec6035.png",
+        "image_after": "shopify:\/\/shop_images\/Image_filter_after_80d7c6ec-e5f2-43cc-a935-cd07aabdc9e0.png",
+        "desktop-image-placement": "image_first",
         "desktop_content_alignment": "left",
-        "image_layout": "align-right",
-        "section_color_scheme": "",
-        "row_color_scheme": "",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "custom_logo_based_slider_93ff6H": {
@@ -530,122 +545,92 @@
         "padding_bottom": 36
       }
     },
-    "multicolumn_9RtG3Y": {
-      "type": "multicolumn",
+    "custom_usp_hzf7aE": {
+      "type": "custom-usp",
       "blocks": {
-        "column_nypYTY": {
+        "column_TWKkAr": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/USP_image1.png",
-            "title": "<strong>FREE SHIPPING<\/strong>",
-            "text": "<p>We are happy to offer international shipping for a flat rate of $40.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image_picker": "shopify:\/\/shop_images\/free-shipping1.webp",
+            "title": "FREE SHIPPING",
+            "description": "We are happy to offer international shipping for a flat rate of $40."
           }
         },
-        "column_mFeEqY": {
+        "column_djDEc4": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/USP_image2.png",
-            "title": "<strong>GIFT PACKAGE<\/strong>",
-            "text": "<p>Pair text with an image to focus on your chosen product.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image_picker": "shopify:\/\/shop_images\/gift2.png",
+            "title": "GIFT PACKAGE",
+            "description": "Pair text with an image to focus on your chosen product."
           }
         },
-        "column_zW4W4C": {
+        "column_39MMQ6": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/USP_image3.png",
-            "title": "<strong>EASY RETURNS<\/strong>",
-            "text": "<p>Pair text with an image to focus on your chosen product.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image_picker": "shopify:\/\/shop_images\/returns.png",
+            "title": "EASY RETURNS",
+            "description": "Pair text with an image to focus on your chosen product."
           }
         },
-        "column_KripPV": {
+        "column_a7QcxJ": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/USP_image4.png",
-            "title": "<strong>ONE YEAR WARRANTY<\/strong>",
-            "text": "<p>Pair text with an image to focus on your chosen product.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image_picker": "shopify:\/\/shop_images\/certificate.webp",
+            "title": "ONE YEAR WARRANTY",
+            "description": "Pair text with an image to focus on your chosen product."
           }
         }
       },
       "block_order": [
-        "column_nypYTY",
-        "column_mFeEqY",
-        "column_zW4W4C",
-        "column_KripPV"
+        "column_TWKkAr",
+        "column_djDEc4",
+        "column_39MMQ6",
+        "column_a7QcxJ"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-5e0bac00-b7a1-4667-a1b5-0d7e1bf926e4",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": ""
       }
     },
-    "multicolumn_X69bCj": {
-      "type": "multicolumn",
+    "custom_text_on_image_ryRimF": {
+      "type": "custom-text-on-image",
       "blocks": {
-        "column_xXfqaU": {
-          "type": "column",
+        "card_RHWCKB": {
+          "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Footer_banner1.png",
-            "title": "Timeless Style",
-            "text": "<p>MADE FOR YOU<\/p>",
-            "link_label": "Shop now",
-            "link": ""
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/56ecdbb8d8cf4950ba3561ad64320a55\/56ecdbb8d8cf4950ba3561ad64320a55.HD-1080p-4.8Mbps-12890938.mp4",
+            "desktop_image": "shopify:\/\/shop_images\/Footer_banner1_ce1f73d5-4044-4d03-8faf-75bbcb4dfeb9.png",
+            "caption_text": "MADE FOR YOU",
+            "rich_text": "<p>Timeless Style<\/p>",
+            "button_text": "Shop now",
+            "button_url": "#"
           }
         },
-        "column_mnPdjW": {
-          "type": "column",
+        "card_Xfmi37": {
+          "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Footer_banner.png",
-            "title": "Unique & Affordable",
-            "text": "<h4>LATEST TRENDS<\/h4>",
-            "link_label": "Shop now",
-            "link": ""
+            "video_url": "",
+            "desktop_image": "shopify:\/\/shop_images\/Footer_banner_e78c39a1-9489-4a9a-ab3a-1db950a02b83.png",
+            "caption_text": "LATEST TRENDS",
+            "rich_text": "<p>Unique & Affordable<\/p>",
+            "button_text": "Shop now",
+            "button_url": "#"
           }
         }
       },
       "block_order": [
-        "column_xXfqaU",
-        "column_mnPdjW"
+        "card_RHWCKB",
+        "card_Xfmi37"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
         "color_scheme": "scheme-8e3dc218-44d2-4fc8-857b-dd92b6d488b9",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 30,
+        "padding_bottom": 30
       }
     },
-    "multicolumn_xDamNg": {
-      "type": "multicolumn",
+    "custom_footer_section_9PpBnY": {
+      "type": "custom-footer-section",
       "blocks": {
-        "column_fjxTKq": {
+        "column_7FAwBd": {
           "type": "column",
           "settings": {
             "title": "Company",
@@ -654,7 +639,7 @@
             "link": ""
           }
         },
-        "column_P9UCbp": {
+        "column_8TRdCN": {
           "type": "column",
           "settings": {
             "title": "Resources",
@@ -663,7 +648,7 @@
             "link": ""
           }
         },
-        "column_NjRyjM": {
+        "column_h64B9f": {
           "type": "column",
           "settings": {
             "title": "Support",
@@ -672,10 +657,10 @@
             "link": ""
           }
         },
-        "column_z9dnc3": {
+        "column_Lm46am": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/logo-white.png",
+            "image": "shopify:\/\/shop_images\/logo-white_bac07ddb-d848-4240-b717-c345f8b26b1f.png",
             "title": "The Perfect Present for Your Partner",
             "text": "",
             "link_label": "",
@@ -684,10 +669,10 @@
         }
       },
       "block_order": [
-        "column_fjxTKq",
-        "column_P9UCbp",
-        "column_NjRyjM",
-        "column_z9dnc3"
+        "column_7FAwBd",
+        "column_8TRdCN",
+        "column_h64B9f",
+        "column_Lm46am"
       ],
       "settings": {
         "title": "",
@@ -703,27 +688,26 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
-        "padding_bottom": 0
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "slideshow_gKDVEN",
+    "custom_hero_section_QDQqmV",
     "custom_product_slider_tabs_3azgtD",
-    "multicolumn_4tCPnJ",
-    "rich_text_Kmb7zD",
-    "collection_list_kQwhzW",
-    "collection_list_ji3NCU",
-    "rich_text_TnpAgf",
-    "featured_collection_GPzePD",
+    "custom_static_banner_j9Rytd",
+    "custom_scroll_text_E7Pi4L",
+    "custom_collection_list_qaXU9f",
+    "custom_richtext_animation_wrUCe9",
+    "custom_products_CdLJkf",
     "custom_hotspot_section_f4AQGg",
-    "featured_collection_iUP4ey",
-    "multirow_XXHWFA",
+    "custom_customer_section_qR3RL8",
+    "custom_before_after_X4AGPR",
     "custom_logo_based_slider_93ff6H",
     "custom_blog_section_LkGR6p",
     "multicolumn_LipV4R",
-    "multicolumn_9RtG3Y",
-    "multicolumn_X69bCj",
-    "multicolumn_xDamNg"
+    "custom_usp_hzf7aE",
+    "custom_text_on_image_ryRimF",
+    "custom_footer_section_9PpBnY"
   ]
 }

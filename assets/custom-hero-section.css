@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  @keyframes popup {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+      -webkit-transform: translateY(50%);
+      -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+      -o-transform: translateY(50%);
+  }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+      -moz-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      -o-transform: translateY(0%);
+  }
+  }
+  
+  .animate-popup {
+    opacity: 0;
+    transform-origin: bottom;
+  }
+  
+  .custom-slideshow--content .animate-popup {
+    animation: popup 0.7s ease-out forwards;
+    -webkit-animation: popup 0.7s ease-out forwards;
+  }
+  
+  .line-child {
+    opacity: 1;
+    transform-origin: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .custom-slideshow {
+    width: 100%;
+  }
+  .custom-slideshow--splide{
+    width: 100%;
+  }
+  .custom-slideshow--splide__track {
+    width: 100%;
+  }
+  .custom-slideshow--splide__list {
+    width: 100%;
+  }
+  
+  .custom-slideshow--split__text p {
+    font-size: 62px;
+    width: 100%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .splide__slide:hover {
+      cursor: grab;
+  }
+  .grab-hand {
+      cursor: grab;
+    }
+    .grabbing {
+      cursor: grabbing;
+    }
+  
+  .splide__slide .custom-slideshow--image {
+      width: 100%;
+      height: 100vh;
+    }
+    .splide__arrow {
+      display: none;
+    }  
+    .splide__pagination {
+      bottom: 1em;
+  }
+    .splide__pagination__page {
+      background: #ccc;
+      border: 0;
+      border-radius: 50%;
+      display: inline-block;
+      height: 8px;
+      margin: 8px;
+      opacity: .5;
+      padding: 0;
+      position: relative;
+      transition: transform .2s linear;
+      width: 8px;
+  }
+  
+    .splide__pagination__page.is-active {
+      background: #ffffff;
+      transform: scale(1.2);
+      z-index: 1;
+      opacity: 1;
+      width: 32px;
+      border-radius: 4px;
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+  }
+  .custom-slideshow--splide__list .custom-slideshow--splide__slide {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+  }
+  .custom-slideshow--image {
+      position: relative;
+      z-index: -1;
+  }
+  .custom-slideshow--video{
+    position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  .custom-slideshow--video source {
+    width: 100%;
+  }
+  .custom-slideshow--content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 372px;
+      width: 820px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      z-index: 12;
+      -webkit-transform: translate(-50%, -30%);
+      -moz-transform: translate(-50%, -30%);
+      -ms-transform: translate(-50%, -30%);
+      -o-transform: translate(-50%, -30%);
+  }
+  .custom-slideshow--caption {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 12px;
+    margin: 0 0 20px;
+  }
+  .custom-slideshow--split__text {
+    text-transform: uppercase;
+    font-size: 62px;
+    height: 140px;
+    overflow: hidden;
+    color: #ffffff;
+  }
+  .custom-slideshow--link__wrapper {
+      text-decoration: none;
+  }
+  .custom-slideshow--button {
+    margin: 15px 0 0;
+    padding: 15px 30px;
+    font-size: 15px;
+    font-family: "Tenor sans";
+    font-weight: 400;
+    border-style: solid;
+    border-width: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+  }
