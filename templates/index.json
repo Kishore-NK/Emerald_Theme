@@ -642,10 +642,10 @@
         "padding_bottom": 36
       }
     },
-    "multicolumn_xDamNg": {
-      "type": "multicolumn",
+    "custom_footer_section_azdbpw": {
+      "type": "custom-footer-section",
       "blocks": {
-        "column_fjxTKq": {
+        "column_GfNdGY": {
           "type": "column",
           "settings": {
             "title": "Company",
@@ -654,7 +654,7 @@
             "link": ""
           }
         },
-        "column_P9UCbp": {
+        "column_pxqtkL": {
           "type": "column",
           "settings": {
             "title": "Resources",
@@ -663,7 +663,7 @@
             "link": ""
           }
         },
-        "column_NjRyjM": {
+        "column_qLwLKy": {
           "type": "column",
           "settings": {
             "title": "Support",
@@ -672,10 +672,10 @@
             "link": ""
           }
         },
-        "column_z9dnc3": {
+        "column_PMgghC": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/logo-white.png",
+            "image": "shopify:\/\/shop_images\/logo-white_bac07ddb-d848-4240-b717-c345f8b26b1f.png",
             "title": "The Perfect Present for Your Partner",
             "text": "",
             "link_label": "",
@@ -684,10 +684,10 @@
         }
       },
       "block_order": [
-        "column_fjxTKq",
-        "column_P9UCbp",
-        "column_NjRyjM",
-        "column_z9dnc3"
+        "column_GfNdGY",
+        "column_pxqtkL",
+        "column_qLwLKy",
+        "column_PMgghC"
       ],
       "settings": {
         "title": "",
@@ -724,6 +724,6 @@
     "multicolumn_LipV4R",
     "multicolumn_9RtG3Y",
     "multicolumn_X69bCj",
-    "multicolumn_xDamNg"
+    "custom_footer_section_azdbpw"
   ]
 }
