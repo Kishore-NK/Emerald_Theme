@@ -17,3 +17,22 @@
 .custom-blog-section--para-btn a{
     color: #8d5d48;
 }
+.card__inner {
+    height: 300px;
+}
+.article-card__info {
+    padding-top: 0.4rem;
+    padding-bottom: 14px;
+}
+.article-card .card__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-family: "ITC Stepp", serif;
+}
+.article-card__excerpt {
+    font-style: normal;
+    font-weight: 400;
+    font-family: "Tenor Sans", sans-serif;
+    line-height: 1.3;
+    font-size: 1.4rem;
+}

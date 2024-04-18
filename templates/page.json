@@ -130,11 +130,19 @@
         "padding_top": 30,
         "padding_bottom": 30
       }
+    },
+    "week_6_newsletter_XM4wwx": {
+      "type": "week-6-newsletter",
+      "settings": {
+        "newsletter_heading": "Subscribe to Our Newsletter",
+        "button_label": "Subscribe"
+      }
     }
   },
   "order": [
     "main",
     "week_5_slider_376wkx",
-    "week_6_Yerhrm"
+    "week_6_Yerhrm",
+    "week_6_newsletter_XM4wwx"
   ]
 }

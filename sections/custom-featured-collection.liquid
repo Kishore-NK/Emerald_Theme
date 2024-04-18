@@ -1,0 +1,25 @@
+<h1> {% render 'custom-product-card', name: section.settings.name  %} </h1>
+
+{% schema %}
+    {
+        "name": "Custom Featured",
+        "class": "section",
+        "settings": [
+            {
+                "type": "product_list",
+                "id": "product_list",
+                "label": "Product list"
+            },
+            {
+                "type": "text",
+                "id": "name",
+                "label": "Name"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom Featured"
+            }
+        ]
+    }
+{% endschema %}
