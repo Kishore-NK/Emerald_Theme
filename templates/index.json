@@ -597,49 +597,40 @@
         "padding_bottom": 36
       }
     },
-    "multicolumn_X69bCj": {
-      "type": "multicolumn",
+    "custom_text_on_image_ip8iNL": {
+      "type": "custom-text-on-image",
       "blocks": {
-        "column_xXfqaU": {
-          "type": "column",
+        "card_L8yFFD": {
+          "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Footer_banner1.png",
-            "title": "Timeless Style",
-            "text": "<p>MADE FOR YOU<\/p>",
-            "link_label": "Shop now",
-            "link": ""
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/56ecdbb8d8cf4950ba3561ad64320a55\/56ecdbb8d8cf4950ba3561ad64320a55.HD-1080p-4.8Mbps-12890938.mp4",
+            "desktop_image": "shopify:\/\/shop_images\/Footer_banner1_ce1f73d5-4044-4d03-8faf-75bbcb4dfeb9.png",
+            "caption_text": "MADE FOR YOU",
+            "rich_text": "<p>Timeless Style<\/p>",
+            "button_text": "Shop now",
+            "button_url": "#"
           }
         },
-        "column_mnPdjW": {
-          "type": "column",
+        "card_tDBtKw": {
+          "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Footer_banner.png",
-            "title": "Unique & Affordable",
-            "text": "<h4>LATEST TRENDS<\/h4>",
-            "link_label": "Shop now",
-            "link": ""
+            "video_url": "",
+            "desktop_image": "shopify:\/\/shop_images\/Footer_banner_e78c39a1-9489-4a9a-ab3a-1db950a02b83.png",
+            "caption_text": "LATEST TRENDS",
+            "rich_text": "<p>Unique & Affordable<\/p>",
+            "button_text": "Shop now",
+            "button_url": "#"
           }
         }
       },
       "block_order": [
-        "column_xXfqaU",
-        "column_mnPdjW"
+        "card_L8yFFD",
+        "card_tDBtKw"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
         "color_scheme": "scheme-8e3dc218-44d2-4fc8-857b-dd92b6d488b9",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 30,
+        "padding_bottom": 30
       }
     },
     "custom_footer_section_azdbpw": {
@@ -723,7 +714,7 @@
     "custom_blog_section_LkGR6p",
     "multicolumn_LipV4R",
     "multicolumn_9RtG3Y",
-    "multicolumn_X69bCj",
+    "custom_text_on_image_ip8iNL",
     "custom_footer_section_azdbpw"
   ]
 }
