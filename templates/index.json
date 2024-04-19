@@ -140,7 +140,7 @@
         "block_VeJnBy": {
           "type": "block",
           "settings": {
-            "text": "Jewelryize me",
+            "text": "JEWELRYIZE ME",
             "checkbox": false
           }
         },
@@ -148,21 +148,21 @@
           "type": "block",
           "settings": {
             "text": "You’ll love it",
-            "checkbox": false
+            "checkbox": true
           }
         },
         "block_fBrLDH": {
           "type": "block",
           "settings": {
-            "text": "",
+            "text": "SHOP THE LATEST TRENDS",
             "checkbox": false
           }
         },
         "block_r8ADdW": {
           "type": "block",
           "settings": {
-            "text": "",
-            "checkbox": false
+            "text": "A PERSONAL TOUCH",
+            "checkbox": true
           }
         }
       },
@@ -172,13 +172,12 @@
         "block_fBrLDH",
         "block_r8ADdW"
       ],
-      "disabled": true,
       "settings": {
         "bg_color": "",
         "padding": 16,
         "scroll_time": "50",
-        "font_color": "rgba(0,0,0,0)",
-        "font_size": 80,
+        "font_color": "#7d5c70",
+        "font_size": 76,
         "pause_text": "initial",
         "image_picker": "shopify:\/\/shop_images\/download.webp"
       }

@@ -77,10 +77,10 @@
       width: 100%;
       height: 100vh;
     }
-    .splide__arrow {
+    .custom-slideshow .splide__arrow {
       display: none;
     }  
-    .splide__pagination {
+    .custom-slideshow .splide__pagination {
       bottom: 1em;
   }
     .splide__pagination__page {
