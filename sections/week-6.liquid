@@ -7,10 +7,10 @@
         padding-bottom: {{ section.settings.padding_bottom | divided_by: 2  }}px;
         background: {{ section.settings.color_background }};
     }
-    .bg-card {
+    .testimonial-slider .bg-card {
         background: {{ section.blocks.first.settings.bg_card }};
     }
-    .active-slide{
+    .testimonial-slider .active-slide{
         background: {{ section.blocks.first.settings.bg_active_card }};
     }
     /* mobile first approach */
@@ -45,6 +45,7 @@
 {% endcapture %}
 
 <div class="testimonial-slider page-width custom-padding--{{ section.id }}">
+    {% if customer %} 
     <div class="testimonial-slider--main-image">
         {% for block in section.blocks %}
             <img
@@ -97,6 +98,12 @@
             </div>
         </splider-component>
     </div>
+    {% else %}
+    <div class="newsletter-login">
+        <h2>Please login to view this section</h2>
+        <a href="/account/login" class="button">Log in</a>
+    </div>
+   {% endif %} 
 </div>
 
 {% schema %}
