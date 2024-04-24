@@ -12,7 +12,7 @@
 {%- unless product.has_only_default_variant -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
-    class="no-js-hidden"
+    class="custom no-js-hidden"
     data-section="{{ section.id }}"
     data-url="{{ product.url }}"
     {% if update_url == false %}

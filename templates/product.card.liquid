@@ -1,0 +1,174 @@
+{% layout none %}
+{% comment %} <custom-product-card class="product-card" data-product-handle="{{product.handle}}">
+  <div class="product-card__wrap isolate">
+    {%- liquid
+      assign current_variant = product.selected_variant
+      assign price = current_variant.price
+      assign compare_at_price = current_variant.compare_at_price    
+      assign available = current_variant.available | default: false
+      assign featured_media = product.featured_media
+
+      if current_variant.image != nil
+        assign featured_media = current_variant.image
+      endif
+    -%}
+    
+
+
+
+
+
+    <a href="{{ product.url }}" class="product-link" data-product-handle="{{ product.handle}}" data-section-id="{{ section_id }}">
+        <div class="product-slide">
+          <div class="product-images">
+            <img src="{{ featured_media | img_url: 'medium' }}" height="" width="" alt="{{ product.title }}" class="first-image">
+            {% if product.images.size > 1 %}
+              <img src="{{ product.images[1].src | img_url: 'medium' }}" height="" width="" alt="{{ product.title }}" class="second-image">
+            {% endif %}
+          </div>
+          <div class="quick-view">
+            <a href="#">Quick View</a>
+          </div>
+          
+        </div>
+        <div class="product-slider-content">
+            <span class="product-type" >{{ product.type }}</span>
+            <h3 class="product-title" >{{ product.title }}</h3>
+            <p class="product-price" >{{ product.price | money }}</p>
+            
+          <div class="product-available" >Available in {{ product.variants.size }} colors</div>
+
+          <div class="product-card__form">
+            {% form 'product', product %}
+              <input type="hidden" name="id" value="{{ current_varient.id }}">
+              {% if product.options_with_values %}
+                <div class="product-card__options">
+                  {% for product_option in product.options_with_values %}
+                    {% if product_option.name == 'Color' %}
+                      <div class="product-card__option">
+                        <ul class="product-card__list">
+                          {% for option_value in product_option.values %}
+                            {% assign isOptionOutOfStock = false %}
+  
+                            {% if current_varient.inventory_quantity == 0
+                              and product_option.selected_value == option_value
+                            %}
+                              {% assign isOptionOutOfStock = true %}
+                            {% endif %}
+  
+                            <li
+                              {% comment %} data-value="{{ option_value }}" {% endcomment %}
+                              class="product-card__color-dot item-swatch{% if isOptionOutOfStock %} out-of-stock{% endif %}"
+                              style="{% if product_option.selected_value == option_value %}border: 1px solid red;{% endif %}"
+                            >
+                              <input
+                                id="{{ current_varient.id | append: option_value }}"
+                                type="radio"
+                                name="option-{{ product_option.name | handleize }}"
+                                value="{{ option_value }}"
+                                {% if product_option.selected_value == option_value %}
+                                  checked
+                                {% endif %} 
+                              >
+                              <label
+                                data-value="{{ option_value }}"
+                                for="{{ current_varient.id | append: option_value }}"
+                              ></label>
+                              {% if isOptionOutOfStock %}
+                                <div class="product-variant-options__cross-line"></div>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endform %}
+  </div>
+
+          {% comment %} {% unless product.has_only_default_variant %}
+            <div class="field mt-1">
+              <select name="id" class="product-card__options select__select">
+                {% for variant in product.variants %}
+                <option value="{{ variant.id }}" {% if variant.id == current_variant.id %}selected{% endif %}>{{ variant.title }}</option>            {% endfor %}
+              </select>
+            </div> 
+          {% else %}
+            <input type="hidden" name="id" value="{{ current_variant.id }}">
+          {% endunless %} {% endcomment %}
+        </div>
+      </a>
+
+
+
+
+
+
+
+
+
+    
+      {% comment %} <a href="{{ product.url }}" 
+         class="media media--portrait"
+         style="padding-bottom: 150%;">
+         {% render 'lazy-image' , src: featured_media %}
+      </a> {% endcomment %}
+    
+    
+    {% comment %} <div class="product-card__badges absolute">
+      {%- if current_variant.available == false -%}
+        <span class="badge badge--soldout" aria-hidden="true">
+          Sold Out
+        </span>
+      {%- elsif current_variant.compare_at_price > current_variant.price and current_variant.available -%}
+        <span class="badge badge--onsale" aria-hidden="true">
+          On Sale
+        </span>
+      {%- endif -%}
+    </div> {% endcomment %}
+  </div>
+  
+  <div class="product-card__info">
+    {% comment %} <a href="{{ product.url }}" class="product-card__title">
+      {{ product.title }}
+    </a> {% endcomment %}
+
+    <!-- <div class="product-card__meta {% unless current_variant.metafields.custom.variant_info %}is--hidden{% endunless %}">
+      {{ current_variant.metafields.custom.variant_info }}
+    </div> -->
+    
+    {% comment %} <div class="product-card__prices mt-1 ">  
+      <span class="product-card__price{% if compare_at_price > price %} on-sale{% endif %}">
+        {{ price | money_without_trailing_zeros }}
+      </span>            
+      <span class="product-card__compareprice{% unless compare_at_price > price %} hidden{% endunless %}">
+        {{ compare_at_price | money_without_trailing_zeros }}
+      </span>
+    </div> {% endcomment %}
+
+    {% comment %} {% unless product.has_only_default_variant %}
+      <div class="field mt-1" {{ current_variant.id }}>
+        <select name="id" class="product-card__options select__select">
+          {% for variant in product.variants %}
+          <option value="{{ variant.id }}" {% if variant.id == current_variant.id %}selected{% endif %}>{{ variant.title }}</option>            {% endfor %}
+        </select>
+      </div> 
+    {% else %}
+      <input type="hidden" name="id" value="{{ current_variant.id }}">
+    {% endunless %} {% endcomment %}
+
+    {% comment %} <div class="product-card__action mt-1">
+      <button type="button" name="add" class="button">Add to Bag</button>
+    </div> {% endcomment %}
+  </div>
+
+  <script>  
+      {{ product.variants | json }}
+    </script>
+
+</custom-product-card> {% endcomment %}
+
+
+{% render "product-card", product: product, section_id: section.id %}

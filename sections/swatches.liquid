@@ -1,0 +1,71 @@
+<style>
+    {% for block in section.blocks %}
+      {% comment %} .custom .color-swatch--{{ block.settings.solid_color_name }}{
+        
+        {% if block.settings.swatch-image != blank %}
+        background:url("{{ block.settings.swatch-image | img_url:"small" }}") fixed no-repeat center/cover;
+        {% else %}
+        background:{{ block.settings.solid_color }}!important;
+        {% endif %}
+      } {% endcomment %}
+
+      .item-swatch [data-value="{{ block.settings.solid_color_name }}"],
+    .item-swatch [data-value="{{ block.settings.solid_color_name | downcase }}"],
+    .item-swatch [data-value="{{ block.settings.solid_color_name | downcase | handle }}"],
+    .item-swatch [data-value="{{ block.settings.solid_color_name | capitalize  }}"],
+    .swatch [data-value="{{ block.settings.solid_color_name }}"] .bgImg,
+    .swatch [data-value="{{ block.settings.solid_color_name | downcase }}"] .bgImg,
+    .swatch [data-value="{{ block.settings.solid_color_name | capitalize  }}"] .bgImg,
+    .color-swatch-enabled[data-tag="{{ block.settings.solid_color_name }}"] span,
+    .color-swatch-enabled[data-tag="{{ block.settings.solid_color_name | downcase }}"] span,
+    .color-swatch-enabled[data-tag="{{ block.settings.solid_color_name | capitalize }}"] span {
+      background-color: {{ block.settings.solid_color }} !important;
+      border: 2px solid white!important;
+      margin: 1px !important;
+    }
+    {% endfor %}
+  </style>
+  {% schema %}
+  {
+      "name":"Swatches",
+      "settings": [
+          {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading"
+          }
+      ],
+      "blocks": [
+          {
+              "name":"solid color",
+              "type": "solid-color",
+              "settings": [
+                  {
+                      "type": "text",
+                      "id": "solid_color_name",
+                      "label": "Solid color name"
+                  },
+                  {
+                      "type": "color",
+                      "id": "solid_color",
+                      "label": "Solid color"
+                  },
+                  {
+                      "type": "header",
+                      "content": "Add image for swatch"
+                  },
+                  {
+                      "type": "image_picker",
+                      "id": "swatch-image",
+                      "label": "Swatch image"
+                  }
+              ]
+          }
+      ],
+      "presets": [
+          {
+            "name": "Swatches"
+          }
+        ]
+  }
+  {% endschema %}

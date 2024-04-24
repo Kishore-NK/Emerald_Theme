@@ -16,9 +16,13 @@
 
 <div class="products-section custom-tab-collections page-width custom-slideshow--{{ section.id }}">
   <div class="custom-tab-collections_header-wrapper">
+    {% if section.settings.heading != blank %} 
     <div class="h1 custom-tab-collections__heading">{{ section.settings.heading }}</div>
+    {% endif %}
     <div class="custom-tab-collections__para-tab">
+      {% if section.settings.para != blank %} 
       <div class="custom-tab-collections__para">{{ section.settings.para }}</div>
+      {% endif %}
       <div class="custom-tab-collections_tabs custom-border-radius">
         {% for block in section.blocks %}
             <span class="custom-tab-collections_collection-name {% if forloop.first %}tab__active{% endif %}">{{ block.settings.collection_name }}</span>
@@ -41,41 +45,28 @@
                     <img src="{{ block.settings.image_select | img_url: 'medium' }}" height="" width="" alt="{{ block.settings.imageHeading }}">
                   </div>
                   <div class="static-content">
+                    {% if block.settings.imageHeading != blank %} 
                     <h2>{{ block.settings.imageHeading }}</h2>
+                    {% endif %}
+                    {% if block.settings.imageDescription != blank %} 
                     <p>{{ block.settings.imageDescription }}</p>
+                    {% endif %}
+                    {% if block.settings.imageButton != blank %} 
                     <a href="">{{ block.settings.imageButton }} 
                     <span>
                       <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L5 5L1 9" stroke="var(--color-accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
                     </span> </a>
+                    {% endif %}
                   </div>
                 </div>
               </li>
 
               {% for product in block.settings.collection.products %}
                 <li class="splide__slide custom-border-radius">
-                  <a href="{{ product.url }}" class="product-link">
-                    <div class="product-slide">
-                      <div class="product-images">
-                        <img src="{{ product.featured_image.src | img_url: 'medium' }}" height="" width="" alt="{{ product.title }}" class="first-image">
-                        {% if product.images.size > 1 %}
-                          <img src="{{ product.images[1].src | img_url: 'medium' }}" height="" width="" alt="{{ product.title }}" class="second-image">
-                        {% endif %}
-                      </div>
-                      <div class="quick-view">
-                        <a href="#">Quick View</a>
-                      </div>
-                      
-                    </div>
-                    <div class="product-slider-content">
-                      <span>{{ product.type }}</span>
-                      <h3>{{ product.title }}</h3>
-                      <p>{{ product.price | money }}</p>
-                      <div>Available in {{ product.variants.size }} colors</div>
-                    </div>
-                  </a>
-                  </li>
+                  {% render 'product-card', product: product, section_id: section.id %}
+                </li>
              {% else %}
                 {% for i in (1..4) %}
                    <li class="splide__slide custom-border-radius">
@@ -162,7 +153,7 @@
 
 {% schema %}
 {
-    "name": "Product Slider with Tabs",
+    "name": "Product slider tabs",
     "tag": "section",
     "class": "section",
     "settings": [
@@ -213,25 +204,25 @@
           {
             "type": "image_picker",
             "id": "image_select",
-            "label": "Select Image",
+            "label": "Desktop image",
             "info": "Select a Image"
         },
         {
             "type": "text",
             "id": "imageHeading",
-            "label": "Image Heading",
+            "label": "Image heading",
             "default": "SALE OFF"
         },
         {
             "type": "richtext",
             "id": "imageDescription",
-            "label": "Enter Description",
+            "label": "Image description",
             "default": "<p>Advertise a promotion or a sale</p>"
         },
         {
             "type": "text",
             "id": "imageButton",
-            "label": "Image Button",
+            "label": "Image button",
             "default": "Shop Sale"
         },
         {
@@ -255,7 +246,7 @@
     ],
     "presets": [
         {
-          "name": "Product Slider with Tabs"
+          "name": "Product slider tabs"
         }
       ]
 }

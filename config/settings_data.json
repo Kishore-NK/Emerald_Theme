@@ -130,6 +130,88 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "swatches": {
+        "type": "swatches",
+        "blocks": {
+          "solid_color_jmaPQN": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "Green",
+              "solid_color": "#4a8b0f"
+            }
+          },
+          "solid_color_mnNYeL": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "Red",
+              "solid_color": "#e72626"
+            }
+          },
+          "solid_color_4U7VcJ": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "White",
+              "solid_color": "#fff"
+            }
+          },
+          "solid_color_FazFbd": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "Orange",
+              "solid_color": "#f9b325"
+            }
+          },
+          "solid_color_CwNLFG": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "Rose",
+              "solid_color": "#caa1a3"
+            }
+          },
+          "solid_color_Y84tnJ": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "Gold",
+              "solid_color": "#ffd700"
+            }
+          },
+          "solid_color_EbgYi6": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "Brown",
+              "solid_color": "#a52a2a"
+            }
+          },
+          "solid_color_UKEQrk": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "Silver",
+              "solid_color": "#c0c0c0"
+            }
+          },
+          "solid_color_Vqan4x": {
+            "type": "solid-color",
+            "settings": {
+              "solid_color_name": "Black",
+              "solid_color": "#000000"
+            }
+          }
+        },
+        "block_order": [
+          "solid_color_jmaPQN",
+          "solid_color_mnNYeL",
+          "solid_color_4U7VcJ",
+          "solid_color_FazFbd",
+          "solid_color_CwNLFG",
+          "solid_color_Y84tnJ",
+          "solid_color_EbgYi6",
+          "solid_color_UKEQrk",
+          "solid_color_Vqan4x"
+        ],
+        "settings": {
+          "heading": ""
+        }
       }
     },
     "content_for_index": [

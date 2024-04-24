@@ -96,9 +96,27 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ input_id }}">
-      {{ value -}}
-      {{ label_unavailable }}
+
+    {% assign optionName = option.name | handleize %}
+
+    <label class="color-swatch--{{ value | handleize }}" for="{{ input_id }}"
+      {% if  optionName  == "color" %} 
+      class="product-variant-options__color-swatch" style = "background-color: {{ value }}" 
+      {%  endif %} >
+      {% if  optionName  != "color" %}
+        {{ value | slice: 0, 1 -}} 
+        {{ label_unavailable }}
+      {%  endif %}
+      {% if  optionName  == "color" %}
+        <span {% if option_disabled %}
+            class="product-variant-options__line-through"
+              {% endif %}  >
+        </span>
+      {%  endif %}
+
+
+      {% comment %} {{ value -}}
+      {{ label_unavailable }} {% endcomment %}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
