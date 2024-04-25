@@ -1,8 +1,8 @@
-div, h1, h2, p, li, span {
+.custom-customer-reviews div, h1, h2, p, li, span {
     margin: 0;
     padding: 0;
 }
-.heading {
+.custom-customer-reviews .heading {
     font-size: 39px;
     color: #263d2d;
     font-weight: 700;

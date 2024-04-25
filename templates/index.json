@@ -6,38 +6,55 @@
         "dots_HGB8Lq": {
           "type": "Dots",
           "settings": {
-            "primary_left_position": 20,
-            "primary_top_position": 20,
-            "dot_product": "14k-gold-barbelle-choker-necklace"
+            "primary_left_position": 38,
+            "primary_top_position": 14,
+            "dot_product": "high-performance-snow-goggles"
           }
         },
         "dots_XAwUht": {
           "type": "Dots",
           "settings": {
-            "primary_left_position": 80,
-            "primary_top_position": 100,
-            "dot_product": "14k-gold-mini-alidia-cubic-zirconia-ring"
+            "primary_left_position": 68,
+            "primary_top_position": 63,
+            "dot_product": "snow-board"
+          }
+        },
+        "dots_4Qtxmx": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 32,
+            "primary_top_position": 78,
+            "dot_product": "snow-boots"
+          }
+        },
+        "dots_W94tDq": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 27,
+            "primary_top_position": 40,
+            "dot_product": "winter-casual-loose-jacket"
           }
         }
       },
       "block_order": [
         "dots_HGB8Lq",
-        "dots_XAwUht"
+        "dots_XAwUht",
+        "dots_4Qtxmx",
+        "dots_W94tDq"
       ],
       "settings": {
         "heading": "Shop the look",
         "desktop_image": "shopify:\/\/shop_images\/4bc2e7575e888685a5e58e845af2c7b4_fe59feb6-fae3-4bc9-95f1-f223ac9c57b3.png",
         "product_list": [
-          "14k-gold-barbelle-choker-necklace",
-          "14k-gold-mini-alidia-cubic-zirconia-ring",
-          "18k-gold-double-initial-custom-ring",
-          "18k-gold-mel-ring-in-green-and-red"
+          "high-performance-snow-goggles",
+          "snow-board",
+          "winter-casual-loose-jacket",
+          "winter-snow-cap"
         ],
         "auto_play": false,
         "show_pagination": false,
         "show_arrows": true,
         "auto_play_duration": 2000,
-        "gap": 5,
         "Slide_animation": "slide",
         "padding_top": 30,
         "padding_bottom": 30

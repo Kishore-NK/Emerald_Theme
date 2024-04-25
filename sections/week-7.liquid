@@ -28,8 +28,6 @@
     assign autoPlay=section.settings.auto_play
     assign type = section.settings.Slide_animation
     assign pagination = section.settings.show_pagination
-    assign perpage = section.settings.perpage
-    assign gap = section.settings.gap
   %}
   {%- capture splide-options -%}
   {
@@ -37,82 +35,96 @@
     "pagination": {{ pagination }},
     "perPage":1,
     "autoplay":{{ autoPlay }},
-    "gap":{{gap}}
+    "gap":"20px",
+    "breakpoints" : {
+        "768": {
+          "perPage": 1
+        },
+        "480": {
+          "perPage": 1
+        }
+      }
   }
   {% endcapture %}
 
-  <div class="hotspot-slider">
-<div class="shop-the-look padding-{{ section.id }}">
-    <div class="page-width">
-      <div class="shop-the-look--box">
-            <div class="shop-the-look__poster">
+<div class="hotspot-slider page-width padding-{{ section.id }}">
+    <div class="shop-the-look">
+        {% if section.settings.heading != blank %}
+        <h1 class="shop-the-look--heading">{{ section.settings.heading }}</h1>
+        {% endif %}
+        <div class="shop-the-look--box">
+                <div class="shop-the-look__poster">
                 {% for block in section.blocks %}
-              <div class="shop-the-look__dots shop-the-look-primary-{{ block.id }}">
-                  <svg class="shop-the-look__dot" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none" class="icon-circle">
-                      <circle class="icon-circle" cx="5.5" cy="5.5" r="5.5" fill="currentColor"></circle>
-                  </svg>
-                  {% if block.settings.dot_product != blank %}
-                    <div class="shop-the-look__product tr1">
-                    <div class="shop-the-look__product-image">
-                      {% render 'responsive-picture', desktopImage:block.settings.dot_product.featured_image %}
-                    </div>
-                    <div class="shop-the-look-product-details">
-                      {% if block.settings.dot_product.title != blank and block.settings.dot_product.url != blank %}
-                        <h2 class="h5">
-                          <a href="{{ block.settings.dot_product.url }}">
-                          {{ block.settings.dot_product.title }}
-                          </a>
-                        </h2>
-                      {% endif %}
-                    
-                      {% if block.settings.dot_product.price != blank %}
-                        <s>{{ block.settings.dot_product.price | money_without_trailing_zeros }}.00</s>                    
-                      {% endif %}
+                    <div class="shop-the-look__dots shop-the-look-primary-{{ block.id }}">
+                        <svg class="shop-the-look__dot" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none" class="icon-circle">
+                            <circle class="icon-circle" cx="5.5" cy="5.5" r="5.5" fill="currentColor"></circle>
+                        </svg>
+                        {% if block.settings.dot_product != blank %}
+                        <div class="shop-the-look__product tr1">
+                            <div class="shop-the-look__product-image">
+                                {% render 'responsive-picture', desktopImage:block.settings.dot_product.featured_image %}
+                            </div>
+                            <div class="shop-the-look-product-details">
+                                {% if block.settings.dot_product.title != blank and block.settings.dot_product.url != blank %}
+                                    <h2 class="h5">
+                                    <a href="{{ block.settings.dot_product.url }}">
+                                        {{ block.settings.dot_product.title }}
+                                    </a>
+                                    </h2>
+                                {% endif %}
 
-                      <div>
-                        <a href="{{ block.settings.dot_product.url }}" class="view-product">
-                            Add to cart 
-                            
-                          </a>
-                    </div>
-                    </div>
-                    </div>
-                  {% endif %}
-              </div>
-              {% endfor %}
+                                <div class="product-card__prices">
+                                    {% if block.settings.dot_product.compare_at_price !=blank %}
+                                      <span class="product-card__price-amount">{{block.settings.dot_product.compare_at_price | money }}</span>
+                                    {% endif %} 
+                                    {% if block.settings.dot_product.price != blank %}
+                                      <span class="product-card__compareprice">{{ block.settings.dot_product.price | money }}</span>                    
+                                    {% endif %}
+                                </div> 
 
-              {% if section.settings.desktop_image != blank %}
-                <div class="media">
-                  {% render 'responsive-picture', desktopImage:section.settings.desktop_image %}
+                                <div>
+                                    <form action="/cart/add" method="post">
+                                        <input type="hidden" name="id" value="{{ block.settings.dot_product.variants.first.id }}">
+                                        <button type="submit" class="btn btn--small shop-the-look-btn">Add to bag</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                {% if section.settings.desktop_image != blank %}
+                    <div class="media">
+                        {% render 'responsive-picture', desktopImage:section.settings.desktop_image %}
+                    </div>
+                {% else %}
+                    <div class="media">
+                        {{ 'collection-1' | placeholder_svg_tag }}
+                    </div>
+                {% endif %}
                 </div>
-              {% else %}
-                <div class="media">
-                  {{ 'collection-1' | placeholder_svg_tag }}
-                </div>
-              {% endif %}
-            </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="splide-card-container product-card">
-    <splider-component>
-      <div class="splide" data-slider-options='{{ splide-options }}'>
-        <div class="splide__track">
-          <ul class="splide__list">
-            {% for product in section.settings.product_list %}
-              <li class="splide__slide">
-                {% render
-                  "product-card", product:product
-                %}
-              </li>
-            {% endfor %}
-          </ul>
         </div>
-      </div>
-    </splider-component>
-  </div>
+        
+    </div>
 
+    <div class="splide-card-container product-card">
+        <splider-component>
+            <div class="splide" data-slider-options='{{ splide-options }}'>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        {% for product in section.settings.product_list %}
+                        <li class="splide__slide">
+                            {% render
+                                "product-card", product:product
+                            %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </splider-component>
+    </div>
 </div>
 
 {% schema %}
@@ -149,7 +161,7 @@
               {
                 "type": "checkbox",
                 "id":"auto_play",
-                "label":"Auto play",
+                "label":"Enable auto play",
                 "default":false
               },
               {
@@ -173,15 +185,6 @@
                 "unit": "sec",
                 "label": "Autoplay duration",
                 "default": 2000
-              },
-              {
-                "type": "range",
-                "id": "gap",
-                "min": 5,
-                "max": 40,
-                "step": 5,
-                "label": "Gap",
-                "default": 5
               },
               {
                 "type": "select",
