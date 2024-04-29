@@ -1,5 +1,65 @@
 {
   "sections": {
+    "week_7_MtkMRY": {
+      "type": "week-7",
+      "blocks": {
+        "dots_HGB8Lq": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 38,
+            "primary_top_position": 14,
+            "dot_product": "high-performance-snow-goggles"
+          }
+        },
+        "dots_XAwUht": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 68,
+            "primary_top_position": 63,
+            "dot_product": "snow-board"
+          }
+        },
+        "dots_4Qtxmx": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 32,
+            "primary_top_position": 78,
+            "dot_product": "snow-boots"
+          }
+        },
+        "dots_W94tDq": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 27,
+            "primary_top_position": 40,
+            "dot_product": "winter-casual-loose-jacket"
+          }
+        }
+      },
+      "block_order": [
+        "dots_HGB8Lq",
+        "dots_XAwUht",
+        "dots_4Qtxmx",
+        "dots_W94tDq"
+      ],
+      "settings": {
+        "heading": "Shop the look",
+        "desktop_image": "shopify:\/\/shop_images\/4bc2e7575e888685a5e58e845af2c7b4_fe59feb6-fae3-4bc9-95f1-f223ac9c57b3.png",
+        "product_list": [
+          "high-performance-snow-goggles",
+          "snow-board",
+          "winter-casual-loose-jacket",
+          "winter-snow-cap"
+        ],
+        "auto_play": false,
+        "show_pagination": false,
+        "show_arrows": true,
+        "auto_play_duration": 2000,
+        "Slide_animation": "slide",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
     "custom_hero_section_QDQqmV": {
       "type": "custom-hero-section",
       "blocks": {
@@ -692,6 +752,7 @@
     }
   },
   "order": [
+    "week_7_MtkMRY",
     "custom_hero_section_QDQqmV",
     "custom_product_slider_tabs_3azgtD",
     "custom_static_banner_j9Rytd",
