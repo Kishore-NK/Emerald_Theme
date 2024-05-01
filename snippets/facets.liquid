@@ -684,8 +684,9 @@
             </div>
             <div
               id="FacetsWrapperMobile"
-              class="mobile-facets__main has-submenu gradient"
+              class="mobile-facets__main has-submenu gradient" style="visibility: visible"
             >
+              {%- comment -%}for drawer{%- endcomment -%}
               {%- if enable_filtering -%}
                 {%- for filter in results.filters -%}
                   {% liquid
@@ -715,9 +716,9 @@
                         </summary>
                         <div
                           id="FacetMobile-{{ forloop.index }}-{{ section.id }}"
-                          class="mobile-facets__submenu gradient"
+                          class="gradient {%- comment -%}mobile-facets__submenu{%- endcomment -%}"
                         >
-                          <button
+                          {% comment %} <button
                             class="mobile-facets__close-button link link--text focus-inset"
                             aria-expanded="true"
                             type="button"
@@ -729,7 +730,7 @@
                                 {{ 'products.facets.filter_and_operator_subtitle' | t }}
                               </span>
                             {%- endif -%}
-                          </button>
+                          </button> {% endcomment %}
                           <ul class="{{ visual_layout_class }} mobile-facets__list list-unstyled" role="list">
                             {%- liquid
                               assign sorted_values = filter.values
@@ -751,7 +752,7 @@
                               <li class="mobile-facets__item list-menu__item">
                                 <label
                                   for="Filter-{{ filter.param_name | escape }}-mobile-{{ forloop.index }}"
-                                  class="facets__label mobile-facets__label{% if is_disabled %} mobile-facets__label--disabled disabled{% endif %}{% if has_visual_display %} visual-display-parent visual-display-parent--{{ filter.presentation }}{% endif %}{% if value.active %} active{% endif %}"
+                                  class="item-swatch facets__label mobile-facets__label{% if is_disabled %} mobile-facets__label--disabled disabled{% endif %}{% if has_visual_display %} visual-display-parent visual-display-parent--{{ filter.presentation }}{% endif %}{% if value.active %} active{% endif %}"
                                 >
                                   <input
                                     class="mobile-facets__checkbox"
@@ -766,7 +767,12 @@
                                       disabled
                                     {% endif %}
                                   >
-
+                                  
+                                  {%- if filter.label == "Color" -%}
+                                    <label for="Filter-{{ filter.param_name | escape }}-mobile-{{ forloop.index }}" data-value="{{ value.label }}"  style="width:15px;height:15px;border-radius:50%">
+                              
+                                    </label>
+                                  {%- else -%}
                                   {% if has_visual_display %}
                                     <div class="facets__visual-display-wrapper">
                                       {% render 'visual-display',
@@ -800,7 +806,7 @@
                                       <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                   {% endif %}
-
+                                  {%- endif -%}  
                                   <span class="facet-checkbox__text" aria-hidden="true">
                                     {{- value.label | escape }} ({{ value.count }})</span
                                   >
@@ -818,7 +824,7 @@
                             {%- endfor -%}
                           </ul>
 
-                          <div class="no-js-hidden mobile-facets__footer gradient">
+                          {% comment %} <div class="no-js-hidden mobile-facets__footer gradient">
                             <facet-remove class="mobile-facets__clear-wrapper">
                               <a href="{{ filter.url_to_remove }}" class="mobile-facets__clear underlined-link">
                                 {{- 'products.facets.clear' | t -}}
@@ -836,7 +842,7 @@
                                 {{ 'products.facets.apply' | t }}
                               </button></noscript
                             >
-                          </div>
+                          </div> {% endcomment %}
                         </div>
                       </details>
                     {% when 'price_range' %}
@@ -959,11 +965,11 @@
                   {% endcase %}
                 {%- endfor -%}
               {%- endif -%}
-
+              {%- comment -%}for drawer{%- endcomment -%}
               {%- if enable_sorting -%}
                 <div
                   id="Details-Mobile-SortBy-{{ section.id }}"
-                  class="mobile-facets__details js-filter{% if filter_type == 'drawer' %} medium-hide large-up-hide{% endif %}"
+                  class="mobile-facets__details js-filter"
                   data-index="mobile-{{ forloop.index }}"
                 >
                   <div class="mobile-facets__summary">
@@ -1078,7 +1084,7 @@
         <div class="facet-filters sorting caption small-hide">
           <div class="facet-filters__field">
             <h2 class="facet-filters__label caption-large text-body">
-              <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
+              {% comment %} <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label> {% endcomment %}
             </h2>
             <div class="select">
               {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}

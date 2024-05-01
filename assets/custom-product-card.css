@@ -1,0 +1,130 @@
+.product-slide {
+    position: relative;
+  }
+  
+  .product-images {
+    position: relative;
+    /* display: inline-block; */
+    /* border: 1px solid red; */
+    height: 320px;
+  }
+  
+  .product-images img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .product-images .second-image {
+    display: none;
+    opacity: 0;
+    transition: opacity .25s linear;
+  }
+  
+  .product-slide:hover .second-image {
+    display: block;
+    opacity: 1;
+  }
+  .product-slide:hover .first-image {
+    display: none;
+  }
+  
+  
+  
+  
+  
+  
+  .quick-view {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background-color: #fff;
+    color: #2c2d2e;
+    display: none;
+    /* width: 100%; */
+    text-align: center;
+    
+    /* height: 44px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    opacity: 0;
+    transition: opacity .25s linear;
+    /* border: 1px solid red; */
+    border-radius: 4px;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 6px #00000014;
+  }
+  .quick-view a {
+    text-decoration: none;
+    color: #2c2d2e;
+  }
+  
+  .product-slide:hover .quick-view {
+    display: block;
+    opacity: 1;
+  }
+  
+  .splide .static-content svg path {
+    stroke: #fff;
+  }
+
+  .static-image {
+    height: 100%;
+    overflow: hidden;
+  }
+  .static-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  
+  * {
+    text-decoration: none;
+  }
+
+  
+  .product-slider-content {
+    /* border: 1px solid red; */
+    padding: 20px;
+    line-height: 2.4rem;
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+    background: #fcf9f6;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .product-slider-content .product-type {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: .1em;
+    /* margin-bottom: 8px;   */
+    opacity: .8;
+  }
+  .product-slider-content .product-title {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+    /* margin-bottom: 5px; */
+    margin-top: 10px;
+    color: #3b5342;
+  }
+  .product-slider-content .product-price {
+    font-weight: 400;
+  }
+  .product-slider-content .product-available {
+    font-size: 1.2rem;
+    line-height: 18px;
+    opacity: .8;
+    transform: translateY(0);
+  }

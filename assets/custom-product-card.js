@@ -21,10 +21,13 @@ class CustomProductCard extends HTMLElement {
     );
     this.currentVariant = this.variantData.find(
       (item) =>
-        JSON.stringify(item.options) == JSON.stringify(this.selectedOptions)
+        JSON.stringify(item.options).includes(this.selectedOptions)
+        // JSON.stringify(item.options) == JSON.stringify(this.selectedOptions)
     );
     console.log("variantdata", this.variantData);
+    console.log("variantdata", this.variantData[0].options);
     console.log("current variant", this.currentVariant);
+    console.log("selected variant", this.selectedOptions);
     this.getUpdatedCard();
   }
 
