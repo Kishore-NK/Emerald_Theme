@@ -101,7 +101,7 @@
 
     <label class="color-swatch--{{ value | handleize }}" for="{{ input_id }}"
       {% if  optionName  == "color" %} 
-      class="product-variant-options__color-swatch" style = "background-color: {{ value }}" 
+      class="product-variant-options__color-swatch" style = "background-color: {{ value }}; padding: 1.5rem; border-radius: 100%; " 
       {%  endif %} >
       {% if  optionName  != "color" %}
         {{ value -}} 
