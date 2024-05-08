@@ -1890,10 +1890,11 @@ input[type='checkbox'] {
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
-  width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+  width: calc(12rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
   display: flex;
   border-radius: var(--inputs-radius);
-  min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
+  /* min-height: calc((var(--inputs-border-width) * 2) + 4.5rem); */
+  height: 35px;
 }
 
 .quantity:after {
@@ -3634,8 +3635,8 @@ details-disclosure > details {
   display: none;
 }
 .product-card__color-dot label {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   display: inline-block;
   cursor: pointer;
   border-radius: 50%;
@@ -3804,4 +3805,33 @@ details-disclosure > details {
   .product-card__quick-view-button {
     display: none;
   }
+}
+
+/* Progress bar styling */
+
+.progress-bar {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%
+}
+.progress-bar--container {
+  width: 100%
+}
+.progress-bar--progress {
+  border: .5px solid #8d5d48;
+  width: 100%;
+}
+.progress-bar--money {
+  font-size: 13px;
+  margin:0;
+  padding: 0;
+  padding-bottom: 5px;
+  letter-spacing: 0;
+}
+.in-stock-bar {
+  display: flex;
+  height: 5px;
+  background-color: #8d5d48;
 }

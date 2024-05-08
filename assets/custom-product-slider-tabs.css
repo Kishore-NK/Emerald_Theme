@@ -102,7 +102,8 @@
   .static-product-slider {
     position: relative;
     /* border: 1px solid red; */
-    height: 480px;
+    /* height: 500px; */
+    height: 100%;
     border-radius: 10px;
     overflow: hidden;
   }
@@ -318,11 +319,11 @@
     opacity: .8;
   }
   .tab-slider .splide__slide .product-slider-content .product-title {
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     line-height: 2.4rem;
     font-weight: 500;
     /* margin-bottom: 5px; */
-    margin-top: 10px;
+    /* margin-top: 10px; */
     color: #3b5342;
   }
   .tab-slider .splide__slide .product-slider-content .product-price {

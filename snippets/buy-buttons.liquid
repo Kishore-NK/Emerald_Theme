@@ -65,6 +65,44 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
+        {% comment %} custom add to cart button start {% endcomment %}
+        <button
+          style="width: 100%;"
+          id="ProductSubmitButton-{{ section_id }}"
+          type="submit"
+          name="add"
+          class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+            disabled
+          {% endif %}
+        >
+          <span id="cartwithprice">
+            {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- else -%}
+            <input
+              class="quantity__input"
+              type="number"
+              name="quantity"
+              id="custom-price-atc"
+              data-cart-quantity="{{ cart_qty }}"
+              data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+              min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+              {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+              {% endif %}
+              step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+              value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+              form="{{ product_form_id }}"
+            >
+              Add to cart {{ product.selected_or_first_available_variant.price | times: product.selected_or_first_available_variant.quantity_rule.min | money }}
+            {%- endif -%}
+          </span>
+          {%- render 'loading-spinner' -%}
+        </button>
+        {% comment %} custom add to cart button end {% endcomment %}
+
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
@@ -93,6 +131,7 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button>
+
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}

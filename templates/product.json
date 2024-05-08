@@ -1,5 +1,10 @@
 {
   "sections": {
+    "custom_breadcrums_QAFEYd": {
+      "type": "custom-breadcrums",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -20,6 +25,11 @@
           "settings": {
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -32,6 +42,18 @@
           "settings": {
           }
         },
+        "variant_offer_ffKTN7": {
+          "type": "variant-offer",
+          "settings": {
+            "offer_title": "Variant discount"
+          }
+        },
+        "pincode_checker_yxEMDF": {
+          "type": "pincode-checker",
+          "settings": {
+            "pincode_heading": "Pincode checker"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -39,15 +61,16 @@
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
             "share_label": "Share"
+          }
+        },
+        "bundles_GdfFqa": {
+          "type": "bundles",
+          "settings": {
+            "bundle_heading": "Frequently bought together"
           }
         }
       },
@@ -55,26 +78,324 @@
         "vendor",
         "title",
         "price",
+        "description",
         "variant_picker",
         "quantity_selector",
+        "variant_offer_ffKTN7",
+        "pincode_checker_yxEMDF",
         "buy_buttons",
-        "description",
-        "share"
+        "share",
+        "bundles_GdfFqa"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
-        "constrain_to_viewport": true,
+        "media_size": "medium",
+        "constrain_to_viewport": false,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
-        "hide_variants": true,
+        "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 12,
         "padding_bottom": 12
+      }
+    },
+    "custom_product_details_accordian_jJD8QR": {
+      "type": "custom-product-details-accordian",
+      "settings": {
+        "product_heading": "PRODUCT DETAILS",
+        "product_para": "<p>Please read our <a href=\"#\" title=\"#\">frequently asked questions<\/a> to find out more.<\/p>",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "multicolumn_iXRDxK": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_XfjQGw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img31_407x_crop_center_888e2729-fa87-4166-92a7-4960161f43d6.webp",
+            "title": "EASY RETURNS",
+            "text": "<p>Research your appliances and language capabilities to be sure the voice assistant you choose works with your household’s needs.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_TxnN3b": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img33_407x_crop_center_1f25e926-c483-4f0c-a132-1844c676a3f1.webp",
+            "title": "HANDMADE IN LONDON",
+            "text": "<p>Stay connected to your community with real-time crime and safety alerts from your neighbors and local public safety agencies.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qz4Tyi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img32_407x_crop_center_ab2d9d7b-8c4e-440a-b7b0-81b3ef6a07ce.webp",
+            "title": "FINANCING OPTIONS",
+            "text": "<p>Keeping up with the devices connected to your network has never been easier. Invite guests or view and manage connected devices with just a few clicks.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_XfjQGw",
+        "column_TxnN3b",
+        "column_qz4Tyi"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multirow_aN4b9X": {
+      "type": "multirow",
+      "blocks": {
+        "row_6MNXTB": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img27_1_1100x1276_crop_center_ac9c3596-22dd-43b3-bd81-198c9ef55ef8.webp",
+            "caption": "ADD A TAGLINE",
+            "heading": "THERE IS NO BETTER TIME TO BE YOUR BEST THAN NOW",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_6MNXTB"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-right",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 80
+      }
+    },
+    "custom_scroll_text_TF7iHR": {
+      "type": "custom-scroll-text",
+      "blocks": {
+        "block_BtPYEP": {
+          "type": "block",
+          "settings": {
+            "text": "ROMANCE IS PRICELESS",
+            "checkbox": false
+          }
+        },
+        "block_3tG3fC": {
+          "type": "block",
+          "settings": {
+            "text": "THE FINEST GEMSTONES",
+            "checkbox": false
+          }
+        },
+        "block_kBWfYH": {
+          "type": "block",
+          "settings": {
+            "text": "YOUR STYLE, OUR DESIGN",
+            "checkbox": false
+          }
+        }
+      },
+      "block_order": [
+        "block_BtPYEP",
+        "block_3tG3fC",
+        "block_kBWfYH"
+      ],
+      "custom_css": [
+        ".custom-scrool-section {transform: rotate(2deg);}"
+      ],
+      "settings": {
+        "bg_color": "#e9f1eb",
+        "padding": 30,
+        "scroll_time": "50",
+        "font_color": "#263d2d",
+        "font_size": 40,
+        "pause_text": "initial",
+        "image_picker": "shopify:\/\/shop_images\/Star_100x100_crop_center_5b3cb980-d531-4438-a30b-a3153b69d8b2.webp"
+      }
+    },
+    "rich_text_QNQGHr": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_jmxUcB": {
+          "type": "caption",
+          "settings": {
+            "caption": "Custom Design",
+            "text_style": "subtitle",
+            "text_size": "small"
+          }
+        },
+        "heading_7BaYc8": {
+          "type": "heading",
+          "settings": {
+            "heading": "JEWELRY IS THE COMPANION OF LOVE✨",
+            "heading_size": "h1"
+          }
+        },
+        "text_3xkEC3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For women, jewelry is often seen as a way to express their personal style and add a touch of glamour to their outfit. Popular jewelry styles for women include delicate necklaces, statement earrings, and stackable bracelets.<\/p>"
+          }
+        },
+        "button_hxLg7J": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book an appointment",
+            "button_link": "",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_jmxUcB",
+        "heading_7BaYc8",
+        "text_3xkEC3",
+        "button_hxLg7J"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 52
+      }
+    },
+    "video_bLmR9w": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify:\/\/files\/videos\/home banner video.mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "video",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_customer_section_PrptU8": {
+      "type": "custom-customer-section",
+      "blocks": {
+        "slide_fLFiYC": {
+          "type": "slide",
+          "settings": {
+            "product_url": "",
+            "rating_range_review": 5,
+            "comment": "Outstanding ❤️️",
+            "text_area": "I was very pleased from start to finish. I have never bought a ring before and I was put at ease at every turn.",
+            "author_name": "AUDREY",
+            "content_position_desktop": "left"
+          }
+        },
+        "slide_66hPnb": {
+          "type": "slide",
+          "settings": {
+            "product_url": "",
+            "rating_range_review": 4,
+            "comment": "Extremely Happy  💫",
+            "text_area": "They paid full attention to what I asked for even though I only gave them a small amount of info to complete the task with.",
+            "author_name": "THERESA M.",
+            "content_position_desktop": "center"
+          }
+        },
+        "slide_LdHEi3": {
+          "type": "slide",
+          "settings": {
+            "product_url": "",
+            "rating_range_review": 4.5,
+            "comment": "Amazing!",
+            "text_area": "The design is perfect, and they wen't above and beyond on everything. I couldn't have asked for a better experience",
+            "author_name": "MELANIE CLAIRE",
+            "content_position_desktop": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_fLFiYC",
+        "slide_66hPnb",
+        "slide_LdHEi3"
+      ],
+      "custom_css": [
+        ".custom-customer-reviews--splide__slide {background: #f5f3f2; padding: 30px; width: calc(32%) !important;}",
+        ".custom-customer-reviews--splide .splide__arrow {top: 52%;}",
+        ".custom-customer-reviews .splide__arrow--next {right: -1em;}"
+      ],
+      "settings": {
+        "heading_customer_review": "Customer Review",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "multirow_ULyhtY": {
+      "type": "multirow",
+      "blocks": {
+        "row_UhnW4M": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img36_690x690_crop_center_a66ec0bb-d2e0-415c-a504-274cfb2824d5.webp",
+            "caption": "Self Expression",
+            "heading": "DISCOVER THE PERFECT ACCESSORY FOR YOUR STYLE",
+            "text": "<p>Pair text with an image to focus on your chosen product.<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_UhnW4M"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "heading_size": "h0",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "scheme-1",
+        "row_color_scheme": "scheme-83b3e089-144b-4e2f-9191-87c257b14b1b",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "related-products": {
@@ -94,10 +415,120 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "custom_text_on_image_eGd6EM": {
+      "type": "custom-text-on-image",
+      "blocks": {
+        "card_4wD6Vm": {
+          "type": "card",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/56ecdbb8d8cf4950ba3561ad64320a55\/56ecdbb8d8cf4950ba3561ad64320a55.HD-1080p-4.8Mbps-12890938.mp4",
+            "caption_text": "MADE FOR YOU",
+            "rich_text": "<p>Timeless Style<\/p>",
+            "button_text": "Shop now",
+            "button_url": ""
+          }
+        },
+        "card_VjfYPT": {
+          "type": "card",
+          "settings": {
+            "video_url": "",
+            "desktop_image": "shopify:\/\/shop_images\/Footer_banner_e18b05d6-295d-40b9-8141-05547bfb0677.png",
+            "caption_text": "LATEST TRENDS",
+            "rich_text": "<p>Unique & Affordable<\/p>",
+            "button_text": "Shop now",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_4wD6Vm",
+        "card_VjfYPT"
+      ],
+      "settings": {
+        "color_scheme": "scheme-8e3dc218-44d2-4fc8-857b-dd92b6d488b9",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "custom_footer_section_4ArDij": {
+      "type": "custom-footer-section",
+      "blocks": {
+        "column_3mmzaM": {
+          "type": "column",
+          "settings": {
+            "title": "Company",
+            "text": "<p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Wholesale\">Wholesale<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Become a retailer\">Become a retailer<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Corporate orders\">Corporate orders<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Affiliates\">Affiliates<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/pages\/faq\" title=\"F.A.Q.\">F.A.Q.<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/pages\/contact\" title=\"Contact\">Contact<\/a><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_QXFFGb": {
+          "type": "column",
+          "settings": {
+            "title": "Resources",
+            "text": "<p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"About\">About<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/blogs\/news\" title=\"Blog\">Blog<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Careers\">Careers<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Find a store\">Find a store<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Press\">Press<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Support\">Support<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Privacy\">Privacy<\/a><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Yjp3DQ": {
+          "type": "column",
+          "settings": {
+            "title": "Support",
+            "text": "<p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Delivery\">Delivery<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Shipping & returns\">Shipping & returns<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"My account\">My account<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/products\/faux-tortoise-tangle-drop-earrings?variant=44689214079294#\" title=\"Customer service\">Customer service<\/a><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_aNgkjJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-white_8bee04e3-ccda-408d-926f-f8b2490c1cf8.png",
+            "title": "The Perfect Present for Your Partner",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_3mmzaM",
+        "column_QXFFGb",
+        "column_Yjp3DQ",
+        "column_aNgkjJ"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-8e3dc218-44d2-4fc8-857b-dd92b6d488b9",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
+    "custom_breadcrums_QAFEYd",
     "main",
-    "related-products"
+    "custom_product_details_accordian_jJD8QR",
+    "multicolumn_iXRDxK",
+    "multirow_aN4b9X",
+    "custom_scroll_text_TF7iHR",
+    "rich_text_QNQGHr",
+    "video_bLmR9w",
+    "custom_customer_section_PrptU8",
+    "multirow_ULyhtY",
+    "related-products",
+    "custom_text_on_image_eGd6EM",
+    "custom_footer_section_4ArDij"
   ]
 }

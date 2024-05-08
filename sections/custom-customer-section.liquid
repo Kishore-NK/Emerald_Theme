@@ -39,7 +39,9 @@
                     {% for block in section.blocks %}
                         <li class="custom-customer-reviews--splide__slide splide__slide" style="width: 20%;" >
                             <div class="custom-customer-reviews--product">
-                                <img class="custom-customer-reviews--product-image " src="{{ block.settings.slide_image | image_url }}" alt=""  height="250" width="300">
+                                {% if block.settings.slide_image != blank %}
+                                <img class="custom-customer-reviews--product-image " src="{{ block.settings.slide_image | image_url }}" alt="image"  height="250" width="300">
+                                {% endif %}
                                 <a class="custom-customer-reviews--button-wrapper" href="{{ block.settings.product_url }}" >
                                     <div class="ustom-customer-reviews"></div>
                                 </a>

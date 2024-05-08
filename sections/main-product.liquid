@@ -454,6 +454,105 @@
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+
+              {% when 'variant-offer' %}
+                <div class="coupon-container">
+                  {%- if product.selected_or_first_available_variant.metafields.custom.variant_discount != blank -%}
+                    <variant-offer class="coupon">
+                      <div class="left">
+                      <div>{{ block.settings.offer_title }}</div>
+                      </div>
+                      <div class="center">
+                      <div>
+                        <div>
+                        {%- if product.selected_or_first_available_variant.metafields.custom.variant_discount != blank -%}
+                          <h2 id="variant_discount" data-code='{{ product.selected_or_first_available_variant.metafields.custom.variant_discount }}'>{{ product.selected_or_first_available_variant.metafields.custom.variant_discount }}% OFF</h2>
+                        {%- endif -%}
+                        </div>
+                        <h3>Coupon</h3>
+                        <button id="copyButton">Copy</button>
+                      </div>
+                      </div>
+                      <div class="right">
+                      <div>{{ product.selected_variant.id }}</div>
+                      </div>
+                  </variant-offer>
+                  {%- endif -%}
+                </div>
+
+              {% when 'pincode-checker' %}
+                {% comment %} <pincode-checker id="container">
+                  <input type="number" id="pincodeInput" placeholder="Enter 6-digit Pincode">
+                  <button id="pincodeButton">Check Pincode</button>
+                  <div id="result"></div>
+                  <div class="toasts"></div>
+                <div class="master-toast-notification hide-toast">
+                  <div class="toast-content">
+                    <div class="toast-icon">
+                      <i class="fa-solid"></i>
+                    </div>
+                    <div class="toast-msg"></div>
+                  </div>
+                  <div class="toast-progress">
+                    <div class="toast-progress-bar"></div>
+                  </div>
+                </div>
+              </pincode-checker> {% endcomment %}
+              <h4>{{ block.settings.pincode_heading }}</h4>
+              <pincode-checker>
+                <div class="pincode-checker">
+                  <div class="field pincode-checker__field">
+                    <input class="field__input" id="PincodeInput" type="text" name="pincode-input" placeholder="Eg. 560012">
+                    <label class="field__label" for="PincodeInput">Enter Pincode</label>
+                  </div>
+                  <button type="button" class="button pincode-checker__button" name="pincode-submit">Check</button>
+                </div>
+                <div class="pincode-message text-body is-hidden" name="pincode-message"></div>
+            </pincode-checker>
+
+              {% when 'bundles' %}
+                {% if product.metafields.custom.bundles != blank %} 
+                <div class="product-bundle-wrapper">
+                  <div class="product-bundle">
+                    <h2 class="product-bundle__heading">{{ block.settings.bundle_heading }}</h2>
+                    <div class="product-bundle-container">
+                      <product-bundle class="product-bundle__grid " data-section-id="{{ section.id }}">
+                        <div class="product-bundle-flex">
+                        {% for product in product.metafields.custom.bundles.value %}
+                          <div class="product-bundle__grid-item product-bundles">
+                            {% render 'product-card',
+                              product: product,                    
+                              section_id: section.id
+                            %}
+                            <input class="bundle-checkbox" data-product-id="{{ product.selected_or_first_available_variant.id }}"
+                            value="{{  product.selected_or_first_available_variant.id }}"
+                            type="checkbox" 
+                            >
+                              {% comment %} {% if forloop.index != forloop.length %}
+                                  <span class="addicon">
+                                  +
+                                  </span>   
+                              {%  else %}  
+                                  <span class="addicon">
+                                      =
+                                  </span>        
+                              {% endif %} {% endcomment %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                          <div id="bundle__atc" 
+                          class="button custom-atc__hover-button" 
+                          data-product-id="{{ product.id }}"  
+                          data-variant-id="{{ product.selected_variant.id }}"
+                          data-section-id="{{ section.id }}"
+                          >Add to cart</div>
+                          </product-bundle>
+                      </div>
+                  </div>
+                </div>
+                {% endif %}
+
+
               {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
@@ -773,6 +872,25 @@
   </div>
 </section>
 
+{% comment %} <script>
+  // Function to copy text to clipboard
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        console.log('Text copied to clipboard:', text);
+      })
+      .catch(err => {
+        console.error('Could not copy text: ', err);
+      });
+  }
+
+  // Event listener for the copy button
+  document.getElementById('copyButton').addEventListener('click', function() {
+    var valueToCopy = document.getElementById("variant_discount").textContent;
+    copyToClipboard(valueToCopy);
+  });
+</script> {% endcomment %}
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
@@ -818,6 +936,43 @@
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
       "limit": 1
+    },
+    {
+      "type": "variant-offer",
+      "name": "Variant offer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "offer_title",
+          "label": "Offer title"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "pincode-checker",
+      "name": "Pincode checker",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pincode_heading",
+          "label": "Heading"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "bundles",
+      "name":"Product Bundles",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "bundle_heading",
+          "label": "Bundle Heading",
+          "default": "Frequently bought together"
+        }
+      ]
     },
     {
       "type": "price",

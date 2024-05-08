@@ -1,8 +1,11 @@
-div, h1, h2, p, li, span {
+* {
+    text-decoration: none;
+}
+.custom-customer-reviews div, .custom-customer-reviews h1, .custom-customer-reviews h2, .custom-customer-reviews p, .custom-customer-reviews li, .custom-customer-reviews span {
     margin: 0;
     padding: 0;
 }
-.heading {
+.custom-customer-reviews .heading {
     font-size: 39px;
     color: #263d2d;
     font-weight: 700;
@@ -15,7 +18,7 @@ div, h1, h2, p, li, span {
     flex-direction: column;
     justify-content: space-evenly;
 }
-.custom-customer-reviews--splide__track .custom-customer-reviews--splide__list {
+.custom-customer-reviews .custom-customer-reviews--splide__track .custom-customer-reviews--splide__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +33,7 @@ div, h1, h2, p, li, span {
     max-width: 300px;
     height: auto;
 }
-.customer-reviews--quick-views {
+.custom-customer-reviews .customer-reviews--quick-views {
     position: absolute;
     bottom: 14px;
     right: 14px;
@@ -44,11 +47,11 @@ div, h1, h2, p, li, span {
     cursor: pointer;
     box-shadow: 0 4px 6px #00000014;
 }
-.customer-reviews--quick-views {
+.custom-customer-reviews .customer-reviews--quick-views {
     display: none;
     transition: display 0.3s ease;
 }
-.customer-reviews--quick-views {
+.custom-customer-reviews .customer-reviews--quick-views {
     display: none; 
 }
 .custom-customer-reviews--splide__track .custom-customer-reviews--splide__list .custom-customer-reviews--splide__slide {
@@ -58,14 +61,14 @@ div, h1, h2, p, li, span {
     display: flex; 
 }
 
-.customer-reviews--quick-view .loading-overlay {
+.custom-customer-reviews .customer-reviews--quick-view .loading-overlay {
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.loading-overlay {
+.custom-customer-reviews .loading-overlay {
     display: none;
     width: 42px;
     height: 42px;
@@ -76,7 +79,7 @@ div, h1, h2, p, li, span {
     line-height: 0;
     transform: translate3d(-50%, -50%, 0);
 }
-.customer-reviews--review {
+.custom-customer-reviews .customer-reviews--review {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,23 +88,23 @@ div, h1, h2, p, li, span {
     height: auto;
     margin: 0 15px 10px;
 }
-.custom-customer-reviews--author-container {
+.custom-customer-reviews .custom-customer-reviews--author-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
 }
-.customer-reviews--products {
+.custom-customer-reviews .customer-reviews--products {
     max-height: 248px;
     position: relative;
     max-width: 298px;
     
 } 
-.custom-customer-reviews--product a {
+.custom-customer-reviews .custom-customer-reviews--product a {
   text-decoration: none;
 }
-.custom-customer-reviews--product-image {
+.custom-customer-reviews .custom-customer-reviews--product-image {
   height: 200px;
   width: 250px;
     border-radius: 5px;
@@ -110,31 +113,31 @@ div, h1, h2, p, li, span {
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
-.custom-customer-reviews--author-comment {
+.custom-customer-reviews .custom-customer-reviews--author-comment {
     font-size: 20px;
     margin: 0 0 8px;
 }
-.custom-customer-reviews--author-review{
+.custom-customer-reviews .custom-customer-reviews--author-review{
     font-size: 15px;
     margin: 0 0 20px;
     line-height: 1.5;
     word-spacing: .001rem;
     letter-spacing: 0rem;
 }
-.custom-customer-reviews--author-name {
+.custom-customer-reviews .custom-customer-reviews--author-name {
     margin: 0;
     font-size: 12px;
 }
-.custom-customer-reviews--splide {
+.custom-customer-reviews .custom-customer-reviews--splide {
   visibility: visible;
 }
-.custom-customer-reviews--splide .splide__arrow {
+.custom-customer-reviews .custom-customer-reviews--splide .splide__arrow {
     top: 30%;
 }
 
-.custom-customer-reviews--splide .splide__arrow.splide__arrow--prev {
+.custom-customer-reviews .custom-customer-reviews--splide .splide__arrow.splide__arrow--prev {
     left: -1em;
 }
-.custom-customer-reviews--splide:hover .splide__arrow {
+.custom-customer-reviews .custom-customer-reviews--splide:hover .splide__arrow {
     display: block;
 }

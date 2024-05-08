@@ -24,6 +24,20 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {% for product in collection.products %}
+      .rating-{{ product.id }}:before {
+          content: "\2605\2605\2605\2605\2605";
+          background: linear-gradient(90deg, #FFAA47 calc({{product.metafields.custom.rating}}/5 * 100%), #E1E1E1 calc({{product.metafields.custom.rating}}/5 * 100%));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          }
+          .product-card .rating-{{ product.id }} {
+              font-size: 1.5rem;
+              display:block;
+          }
+      {% endfor %}
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">

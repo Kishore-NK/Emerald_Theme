@@ -85,12 +85,144 @@
         "pause_text": "initial",
         "image_picker": "shopify:\/\/shop_images\/Star_200x200_crop_center_1c9d77bd-baf5-4d68-94fd-8887a9fd868e.webp"
       }
+    },
+    "rich_text_cYntRe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mPY8jA": {
+          "type": "heading",
+          "settings": {
+            "heading": "USE IT TO ADD SEO TEXT",
+            "heading_size": "h1"
+          }
+        },
+        "text_hQcQHq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Due to high demand, occasionally some of our products do go out of stock. We are constantly monitoring our stock levels, and we usually expect to replenish any product line within a couple of weeks. If you have placed a pre-order for an item that is out of stock and it looks like it will take longer than expected to get it to you.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mPY8jA",
+        "text_hQcQHq"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 100
+      }
+    },
+    "custom_text_on_image_bCmGDK": {
+      "type": "custom-text-on-image",
+      "blocks": {
+        "card_QahNkF": {
+          "type": "card",
+          "settings": {
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/vp\/56ecdbb8d8cf4950ba3561ad64320a55\/56ecdbb8d8cf4950ba3561ad64320a55.HD-1080p-4.8Mbps-12890938.mp4",
+            "caption_text": "MADE FOR YOU",
+            "rich_text": "<p>Timeless Style<\/p>",
+            "button_text": "Shop now",
+            "button_url": ""
+          }
+        },
+        "card_4gAkyT": {
+          "type": "card",
+          "settings": {
+            "video_url": "",
+            "desktop_image": "shopify:\/\/shop_images\/Footer_banner_e18b05d6-295d-40b9-8141-05547bfb0677.png",
+            "caption_text": "LATEST TRENDS",
+            "rich_text": "<p>Unique & Affordable<\/p>",
+            "button_text": "Shop now",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_QahNkF",
+        "card_4gAkyT"
+      ],
+      "settings": {
+        "color_scheme": "scheme-8e3dc218-44d2-4fc8-857b-dd92b6d488b9",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "custom_footer_section_nNrxAx": {
+      "type": "custom-footer-section",
+      "blocks": {
+        "column_FBUiFX": {
+          "type": "column",
+          "settings": {
+            "title": "Company",
+            "text": "<p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Wholesale\">Wholesale<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Become a retailer\">Become a retailer<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Corporate orders\">Corporate orders<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Affiliates\">Affiliates<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/pages\/faq\" title=\"F.A.Q.\">F.A.Q.<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/pages\/contact\" title=\"Contact\">Contact<\/a><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_x8gxCC": {
+          "type": "column",
+          "settings": {
+            "title": "Resources",
+            "text": "<p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"About\">About<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/blogs\/news\" title=\"Blog\">Blog<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Careers\">Careers<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Find a store\">Find a store<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Press\">Press<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Support\">Support<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Privacy\">Privacy<\/a><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6cV4y9": {
+          "type": "column",
+          "settings": {
+            "title": "Support",
+            "text": "<p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Delivery\">Delivery<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Shipping & returns\">Shipping & returns<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"My account\">My account<\/a><\/p><p><a href=\"https:\/\/vision-jewelery.myshopify.com\/collections\/all?sort_by=best-selling#\" title=\"Customer service\">Customer service<\/a><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qrQcFT": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-white_8bee04e3-ccda-408d-926f-f8b2490c1cf8.png",
+            "title": "The Perfect Present for Your Partner",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_FBUiFX",
+        "column_x8gxCC",
+        "column_6cV4y9",
+        "column_qrQcFT"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-8e3dc218-44d2-4fc8-857b-dd92b6d488b9",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "custom_breadcrums_FpdDgw",
     "banner",
     "product-grid",
-    "custom_scroll_text_wTi4LP"
+    "custom_scroll_text_wTi4LP",
+    "rich_text_cYntRe",
+    "custom_text_on_image_bCmGDK",
+    "custom_footer_section_nNrxAx"
   ]
 }

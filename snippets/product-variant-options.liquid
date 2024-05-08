@@ -104,7 +104,7 @@
       class="product-variant-options__color-swatch" style = "background-color: {{ value }}" 
       {%  endif %} >
       {% if  optionName  != "color" %}
-        {{ value | slice: 0, 1 -}} 
+        {{ value -}} 
         {{ label_unavailable }}
       {%  endif %}
       {% if  optionName  == "color" %}

@@ -705,12 +705,12 @@
                       <details
                         id="Details-Mobile-{{ filter.param_name | escape }}-{{ section.id }}"
                         class="mobile-facets__details js-filter"
-                        data-index="mobile-{{ forloop.index }}"
+                        data-index="mobile-{{ forloop.index }}" open
                       >
                         <summary class="mobile-facets__summary focus-inset">
                           <div>
                             <span>{{ filter.label | escape }}</span>
-                            <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
+                            <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-caret' %}</span>
                             <noscript>{% render 'icon-caret' %}</noscript>
                           </div>
                         </summary>
@@ -856,27 +856,27 @@
                       <details
                         id="Details-Mobile-{{ filter.param_name | escape }}-{{ section.id }}"
                         class="mobile-facets__details js-filter"
-                        data-index="mobile-{{ forloop.index }}"
+                        data-index="mobile-{{ forloop.index }}" open
                       >
                         <summary class="mobile-facets__summary focus-inset">
                           <div>
                             <span>{{ filter.label | escape }}</span>
-                            <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
+                            <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-caret' %}</span>
                             <noscript>{% render 'icon-caret' %}</noscript>
                           </div>
                         </summary>
                         <div
                           id="FacetMobile-{{ forloop.index }}-{{ section.id }}"
-                          class="mobile-facets__submenu gradient"
+                          class="gradient {%- comment -%}mobile-facets__submenu{%- endcomment -%}"
                         >
-                          <button
+                          {% comment %} <button
                             class="mobile-facets__close-button link link--text focus-inset"
                             aria-expanded="true"
                             type="button"
                           >
                             {% render 'icon-arrow' %}
                             {{ filter.label | escape }}
-                          </button>
+                          </button> {% endcomment %}
 
                           {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
                           <p class="mobile-facets__info">
@@ -897,7 +897,7 @@
                                     value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
                                   {%- endif %}
                                 {%- endif -%}
-                                type="number"
+                                type="number"     
                                 placeholder="0"
                                 min="0"
                                 inputmode="decimal"
@@ -908,7 +908,7 @@
                                 {% endif %}
                               >
                               <label class="field__label" for="Mobile-Filter-{{ filter.label | escape }}-GTE">
-                                {{- 'products.facets.from' | t -}}
+                                {{- 0.00 -}}
                               </label>
                             </div>
 
@@ -937,11 +937,11 @@
                                 {% endif %}
                               >
                               <label class="field__label" for="Mobile-Filter-{{ filter.label | escape }}-LTE">
-                                {{- 'products.facets.to' | t -}}
+                                {{- max_price_amount -}}
                               </label>
                             </div>
                           </price-range>
-                          <div class="no-js-hidden mobile-facets__footer">
+                          {% comment %} <div class="no-js-hidden mobile-facets__footer">
                             <facet-remove class="mobile-facets__clear-wrapper">
                               <a href="{{ filter.url_to_remove }}" class="mobile-facets__clear underlined-link">
                                 {{- 'products.facets.clear' | t -}}
@@ -959,7 +959,7 @@
                                 {{ 'products.facets.apply' | t }}
                               </button></noscript
                             >
-                          </div>
+                          </div> {% endcomment %}
                         </div>
                       </details>
                   {% endcase %}

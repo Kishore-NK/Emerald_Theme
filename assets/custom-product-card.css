@@ -70,6 +70,10 @@
     display: block;
     opacity: 1;
   }
+  .product-card:hover .quick-view {
+    display: block;
+    opacity: 1;
+  }
   
   .splide .static-content svg path {
     stroke: #fff;
@@ -112,19 +116,82 @@
     opacity: .8;
   }
   .product-slider-content .product-title {
-    font-size: 1.8rem;
-    line-height: 2.4rem;
+    font-size: 1.5rem;
+    line-height: 2.4rem;  
     font-weight: 500;
     /* margin-bottom: 5px; */
-    margin-top: 10px;
+    /* margin-top: 10px; */
     color: #3b5342;
+    font-family: "Tenor Sans", sans-serif;
+    margin: 0;
   }
   .product-slider-content .product-price {
     font-weight: 400;
+    color: #C62A32;
+    margin: 4px;
+  }
+  .product-slider-content .compare-price {
+    text-decoration: line-through;
+    color: #3b5342;
+    padding-right: 10px;
+  }
+  .product-slider-content .rating-number {
+    font-size: 1.3rem;
   }
   .product-slider-content .product-available {
     font-size: 1.2rem;
     line-height: 18px;
     opacity: .8;
     transform: translateY(0);
+    /* border: 1px solid blue; */
+    height: 100%;
+    transition: all .25s cubic-bezier(.104,.204,.492,1);
+    transition: all 0.25s ease; /* for smooth animation */
+  }
+
+  .product-card__form {
+    /* border: 1px solid red; */
+    height: 100%;
+    display: none;
+    transition: all .25s cubic-bezier(.104,.204,.492,1);
+    transition: all 0.25s ease; /* for smooth animation */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .product-color-box {
+    /* border: 1px solid red; */
+    height: 28px;
+    position: relative;
+  }
+  .product-card:hover .product-available {
+    display: none;
+    opacity: 0;
+    /* transform: translateY(-100%); */
+    animation: moveDown 0.25s ease;
+  }
+  .product-card:hover .product-card__form {
+    display: block;
+    opacity: 1;
+    animation: moveUp 0.25s ease;
+    /* transform: translateY(0); */
+  }
+
+  @keyframes moveUp {
+    0% {
+      transform: translateY(25%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes moveDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(25%);
+    }
   }

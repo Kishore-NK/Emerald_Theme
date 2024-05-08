@@ -482,3 +482,7 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+.drawer__inner hr {
+  margin: 1rem 0;
+}

@@ -145,3 +145,7 @@
   border-radius: 8px;
   font-size: 14px;
 }
+
+.collection-product-images {
+  height: 400px !important;
+}

@@ -16,7 +16,7 @@
 
     <a href="{{ product.url }}" class="product-link">
       <div class="product-slide">
-        <div class="product-images">
+        <div class="product-images collection-product-images">
           <img src="{{ product.selected_or_first_available_variant | img_url: 'medium' }}" height="" width="" alt="{{ product.title }}" class="first-image">
           {% if product.images.size > 1 %}
             <img src="{{ product.images[1].src | img_url: 'medium' }}" height="" width="" alt="{{ product.title }}" class="second-image">
@@ -30,11 +30,9 @@
       <div class="product-slider-content">
         <span class="product-type" >{{ product.vendor }}</span>
         <h3 class="product-title" >{{ product.title }}</h3>
-        <p class="product-price" >{{ product.price | money }}</p>
-            
-        <div class="product-available" >Available in {{ product.options_by_name['Color'].values.size }} colors</div>
-
-        <div class="product-card__form">
+        <p class="product-price" > <span class="compare-price">{{ product.compare_at_price | money }}</span>{{ product.price | money }}</p>
+        <div class="product-color-box">
+          <div class="product-card__form">
           {% form 'product', product %}
             <input type="hidden" name="id" value="{{ current_varient.id }}">
               {% if product.options_with_values %}
@@ -82,7 +80,13 @@
                 </div>
               {% endif %}
             {% endform %}
+          </div>
+
+          <div class="product-available" >Available in {{ product.options_by_name['Color'].values.size }} colors</div>
         </div>
+        {% if product.metafields.custom.rating != blank %}
+          <div class="rating-{{ product.id }}" > <span class="rating-number">{{ product.metafields.custom.rating }}</span> </div> 
+        {% endif %}
       </div>
     </a>
       
@@ -99,7 +103,7 @@
       </div> {% endcomment %}
     </div>
     
-    <div class="product-card__info">
+    {% comment %} <div class="product-card__info">
       {% comment %} <a href="{{ product.url }}" class="product-card__title">
         {{ product.title }}
       </a> {% endcomment %}
@@ -132,7 +136,7 @@
         <button type="button" name="add"  class="button">Add to Bag</button>
       </div> {% endcomment %}
       
-  </div>
+  </div> {% endcomment %}
 
     <script>  
       {{ product.variants | json }}
