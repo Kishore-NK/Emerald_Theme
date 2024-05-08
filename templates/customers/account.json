@@ -2,6 +2,14 @@
   "sections": {
     "main": {
       "type": "main-account",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_account_niitwQ": {
+      "type": "custom-account",
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
@@ -9,6 +17,7 @@
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_account_niitwQ"
   ]
 }
