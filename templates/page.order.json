@@ -1,148 +1,15 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
+      "type": "custom-order",
       "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "week_5_slider_376wkx": {
-      "type": "week-5-slider",
-      "blocks": {
-        "product_collection_BcPDag": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Syrups",
-            "collection": "syrups"
-          }
-        },
-        "product_collection_pEAmMR": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Jams",
-            "collection": "jams-and-spreads"
-          }
-        },
-        "product_collection_tkzxCJ": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Fruit chews",
-            "collection": "fruit-chews"
-          }
-        },
-        "product_collection_gqUtX6": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Snacks",
-            "collection": "snacks"
-          }
-        },
-        "product_collection_WkULm7": {
-          "type": "product_collection",
-          "settings": {
-            "collection_name": "Chocolates",
-            "collection": "chocolates"
-          }
-        }
-      },
-      "block_order": [
-        "product_collection_BcPDag",
-        "product_collection_pEAmMR",
-        "product_collection_tkzxCJ",
-        "product_collection_gqUtX6",
-        "product_collection_WkULm7"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Fresh From The Source"
-      }
-    },
-    "week_6_Yerhrm": {
-      "type": "week-6",
-      "blocks": {
-        "slide_Wb73ED": {
-          "type": "Slide",
-          "settings": {
-            "main_image": "shopify:\/\/shop_images\/3c925eb803f7e78c0ac68f2596c8e058_74578927-98be-452e-a3f4-3ee6f1747ce1.jpg",
-            "author_image": "shopify:\/\/shop_images\/d79701ab8c86c3f9d226d6384ec13c8d.jpg",
-            "testimonial_desc": "“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  “",
-            "author_name": "Mr. John Doe",
-            "author_title": "Clients",
-            "bg_card": "#fff",
-            "bg_active_card": "#F6FFC2"
-          }
-        },
-        "slide_6kyQXe": {
-          "type": "Slide",
-          "settings": {
-            "main_image": "shopify:\/\/shop_images\/three-spanakopita-spirals-on-textured-plate.jpg",
-            "author_image": "shopify:\/\/shop_images\/48fd745fbd3a6ce8ce273f8b6fb14567.jpg",
-            "testimonial_desc": "“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  “",
-            "author_name": "Mr. John Doe",
-            "author_title": "Clients",
-            "bg_card": "#fff",
-            "bg_active_card": "#F6FFC2"
-          }
-        },
-        "slide_TH7MGw": {
-          "type": "Slide",
-          "settings": {
-            "main_image": "shopify:\/\/shop_images\/biscotti-lays-in-a-monstera-leaf.jpg",
-            "author_image": "shopify:\/\/shop_images\/images.jpg",
-            "testimonial_desc": "“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  “",
-            "author_name": "Mr. John Doe",
-            "author_title": "Clients",
-            "bg_card": "#fff",
-            "bg_active_card": "#F6FFC2"
-          }
-        },
-        "slide_xgpXQD": {
-          "type": "Slide",
-          "settings": {
-            "main_image": "shopify:\/\/shop_images\/scrumptious-brunch-setting.jpg",
-            "author_image": "shopify:\/\/shop_images\/images_78d8f3cc-00b6-44e3-b769-1d5344a0a58e.jpg",
-            "testimonial_desc": "“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  “",
-            "author_name": "Mr. John Doe",
-            "author_title": "Clients",
-            "bg_card": "#fff",
-            "bg_active_card": "#F6FFC2"
-          }
-        }
-      },
-      "block_order": [
-        "slide_Wb73ED",
-        "slide_6kyQXe",
-        "slide_TH7MGw",
-        "slide_xgpXQD"
-      ],
-      "settings": {
-        "color_background": "#faebd7",
-        "section_heading": "Testimonials",
-        "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "auto_play": false,
-        "show_pagination": true,
-        "rewind": true,
-        "show_arrows": false,
-        "auto_play_duration": 2000,
-        "slide_animation": "loop",
-        "padding_top": 30,
-        "padding_bottom": 30
-      }
-    },
-    "week_6_newsletter_XM4wwx": {
-      "type": "week-6-newsletter",
-      "settings": {
-        "newsletter_heading": "Subscribe to Our Newsletter",
-        "button_label": "Subscribe"
-      }
     }
   },
   "order": [
-    "main",
-    "week_5_slider_376wkx",
-    "week_6_Yerhrm",
-    "week_6_newsletter_XM4wwx"
+    "main"
   ]
 }
