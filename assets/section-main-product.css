@@ -1741,13 +1741,13 @@ a.product__text {
 
 /* bundles */
 
-.product-bundle__heading {
-  font-size: 3.4rem;
+.product-bundle--heading {
+  font-size: 2.4rem;
   font-weight: 600;
   margin-bottom: 2rem;
 }
 
-.product-bundle .product-bundle__grid {
+.product-bundle .product-bundle--grid {
   width: 100%;
   /* display: flex; */
   /* align-items: center; */
@@ -1766,7 +1766,7 @@ a.product__text {
   background-color: #8d5d48;
 }
 
-.product-bundle .product-bundle__grid-item {
+.product-bundle .product-bundle--grid-item {
   position: relative;
   width: 48%;
 }

@@ -54,6 +54,12 @@
             "pincode_heading": "Pincode checker"
           }
         },
+        "bundles_GdfFqa": {
+          "type": "bundles",
+          "settings": {
+            "bundle_heading": "Frequently bought together"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -66,12 +72,6 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "bundles_GdfFqa": {
-          "type": "bundles",
-          "settings": {
-            "bundle_heading": "Frequently bought together"
-          }
         }
       },
       "block_order": [
@@ -83,9 +83,9 @@
         "quantity_selector",
         "variant_offer_ffKTN7",
         "pincode_checker_yxEMDF",
+        "bundles_GdfFqa",
         "buy_buttons",
-        "share",
-        "bundles_GdfFqa"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,

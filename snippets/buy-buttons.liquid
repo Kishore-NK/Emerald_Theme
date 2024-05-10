@@ -66,7 +66,7 @@
         {%- endif -%}
 
         {% comment %} custom add to cart button start {% endcomment %}
-        <button
+        {% comment %} <button
           style="width: 100%;"
           id="ProductSubmitButton-{{ section_id }}"
           type="submit"
@@ -100,7 +100,7 @@
             {%- endif -%}
           </span>
           {%- render 'loading-spinner' -%}
-        </button>
+        </button> {% endcomment %}
         {% comment %} custom add to cart button end {% endcomment %}
 
         <div class="product-form__buttons">

@@ -512,44 +512,37 @@
 
               {% when 'bundles' %}
                 {% if product.metafields.custom.bundles != blank %} 
-                <div class="product-bundle-wrapper">
-                  <div class="product-bundle">
-                    <h2 class="product-bundle__heading">{{ block.settings.bundle_heading }}</h2>
-                    <div class="product-bundle-container">
-                      <product-bundle class="product-bundle__grid " data-section-id="{{ section.id }}">
-                        <div class="product-bundle-flex">
-                        {% for product in product.metafields.custom.bundles.value %}
-                          <div class="product-bundle__grid-item product-bundles">
-                            {% render 'product-card',
-                              product: product,                    
-                              section_id: section.id
-                            %}
-                            <input class="bundle-checkbox" data-product-id="{{ product.selected_or_first_available_variant.id }}"
-                            value="{{  product.selected_or_first_available_variant.id }}"
-                            type="checkbox" 
-                            >
-                              {% comment %} {% if forloop.index != forloop.length %}
-                                  <span class="addicon">
-                                  +
-                                  </span>   
-                              {%  else %}  
-                                  <span class="addicon">
-                                      =
-                                  </span>        
-                              {% endif %} {% endcomment %}
-                            </div>
-                          {% endfor %}
-                        </div>
+                  <div class="product-bundle-wrapper">
+                    <div class="product-bundle">
+                      {% if block.settings.bundle_heading != blank %}
+                        <h2 class="product-bundle--heading">{{ block.settings.bundle_heading }}</h2>
+                      {% endif %}
+                      <div class="product-bundle-container">
+                        <product-bundle class="product-bundle--grid " data-section-id="{{ section.id }}" data-main-product="{{ product.selected_or_first_available_variant.id  }}">
+                          <div class="product-bundle-flex">
+                            {% for product in product.metafields.custom.bundles.value %}
+                              <div class="product-bundle--grid-item product-bundles">
+                                {% render 'product-card',
+                                  product: product,                    
+                                  section_id: section.id
+                                %}
+                                <input class="bundle-checkbox" data-product-id="{{ product.selected_or_first_available_variant.id }}"
+                                value="{{  product.selected_or_first_available_variant.id }}"
+                                type="checkbox" >
+                              </div>
+                            {% endfor %}
+                          </div>
                           <div id="bundle__atc" 
-                          class="button custom-atc__hover-button" 
-                          data-product-id="{{ product.id }}"  
-                          data-variant-id="{{ product.selected_variant.id }}"
-                          data-section-id="{{ section.id }}"
-                          >Add to cart</div>
-                          </product-bundle>
+                            class="button" 
+                            data-product-id="{{ product.id }}"  
+                            data-variant-id="{{ product.selected_variant.id }}"
+                            data-section-id="{{ section.id }}" >
+                            Add to cart
+                          </div>
+                        </product-bundle>
                       </div>
+                    </div>
                   </div>
-                </div>
                 {% endif %}
 
 

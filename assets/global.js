@@ -184,10 +184,10 @@ class QuantityInput extends HTMLElement {
     event.preventDefault();
     const previousValue = this.input.value;
 
-    let customPriceatc = document.getElementById("custom-price-atc");
+    // let customPriceatc = document.getElementById("custom-price-atc");
 
     event.target.name === 'plus' ? this.input.stepUp() : this.input.stepDown();
-    event.target.name === 'plus' ? customPriceatc.stepUp() : customPriceatc.stepDown();
+    // event.target.name === 'plus' ? customPriceatc.stepUp() : customPriceatc.stepDown();
     if (previousValue !== this.input.value) this.input.dispatchEvent(this.changeEvent);
   }
 
@@ -1383,73 +1383,6 @@ customElements.define("variant-offer", variantOffer);
 
 
 
-// bundles
-
-class ProductBundle extends HTMLElement {
-  constructor() {
-      super();
-      this.addEventListener('click', this.bundleAddtocart)
-      this.sectionId = this.dataset.sectionId
-  }
-
-
-  bundleAddtocart() {
-      console.log(this.querySelectorAll('.bundle-checkbox'));
-      this.products = []
-      this.querySelectorAll('.bundle-checkbox').forEach((element) => {
-          if (element.checked == true) {
-              console.log(element);
-              this.products.push(element.value)
-              console.log(this.products);
-          }
-      })
-
-      const handleClick = () => {
-          this.addToCart(this.products);
-      };
-
-      document.querySelector('#bundle__atc').addEventListener('click', handleClick);
-  }
-
-  addToCart(variants) {
-      let cart=document.querySelector('cart-notification') || document.querySelector('cart-drawer');
-      let formData = {
-          "items": variants.map((variantId) =>
-          (
-              {
-                  "id": variantId,
-                  "quantity": 1,
-              }
-          )),
-          "sections": cart.getSectionsToRender().map((section) => section.id)
-      }
-      console.log(formData);
-
-      fetch(window.Shopify.routes.root + 'cart/add.js', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData),
-      })
-          .then(response => {
-              return response.json();
-          })
-          .then(response=>
-              {
-                  cart.renderContents(response);
-              })
-          .catch((error) => {
-              console.error('Error:', error);
-          });
-
-
-  }
-
-}
-
-customElements.define('product-bundle', ProductBundle);
-
 
 
 // pincode checker googlesheet
@@ -1553,7 +1486,7 @@ customElements.define('pincode-checker', PincodeChecker);
 // custom account order page
 
 function getorders(url){
-  fetchUrl = url + "?section=template--15650135507034__main"
+  fetchUrl = url
   fetch(fetchUrl)
   .then(response=>response.text())
   .then((responseText) => {
@@ -1569,36 +1502,272 @@ function getorders(url){
 
 // add to cart
 
-class addToCart extends HTMLElement {
-    constructor() {
-        super();
+// class addToCart extends HTMLElement {
+//     constructor() {
+//         super();
 
-        console.log(this);
-        this.addEventListener('click', this.addtocart);
-    }
-    addtocart() {
-        let formData = {
-            'items': [{
-                'id': Number(this.dataset.productId),
-                'quantity':Number( this.dataset.quantity)
-            }]
-        };
+//         console.log(this);
+//         this.addEventListener('click', this.addtocart);
+//     }
+//     addtocart() {
+//         let formData = {
+//             'items': [{
+//                 'id': Number(this.dataset.productId),
+//                 'quantity':Number( this.dataset.quantity)
+//             }]
+//         };
 
-        fetch(window.Shopify.routes.root + 'cart/add.js', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-            .then(response => {
-                return response.json();
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+//         fetch(window.Shopify.routes.root + 'cart/add.js', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(formData)
+//         })
+//             .then(response => {
+//                 return response.json();
+//             })
+//             .catch((error) => {
+//                 console.error('Error:', error);
+//             });
 
-    }
+//     }
+// }
+
+// customElements.define('add-to-cart', addToCart);
+
+
+
+
+
+
+
+
+
+// bundles
+
+class ProductBundle extends HTMLElement {
+  constructor() {
+      super();
+      this.addEventListener('click', this.bundleAddtocart)
+      // this.addEventListener('click', this.removeBundlesFromCart)
+      this.sectionId = this.dataset.sectionId
+      this.mainProduct=this.dataset.mainProduct
+  }
+
+
+
+//   removeBundlesFromCart() {
+//     let cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer') || document.querySelector('cart-items') ;
+//     let bundleItems = this.products.filter((productId) => productId !== this.mainProduct); 
+//     let lineItemKeys = []; 
+
+//     cart.state.items.forEach((item) => {
+//         if (bundleItems.includes(item.variant_id.toString())) {
+//             lineItemKeys.push(item.key);
+//         }
+//     });
+
+//     fetch(window.Shopify.routes.root + 'cart/update.js', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             updates: lineItemKeys.map((key) => ({
+//                 id: key,
+//                 quantity: 0
+//             }))
+//         })
+//     })
+//     .then(response => {
+//         return response.json();
+//     })
+//     .then(response => {
+//         cart.renderContents(response);
+//     })
+//     .catch((error) => {
+//         console.error('Error:', error);
+//     });
+// }
+
+
+  bundleAddtocart() {
+      console.log(this.querySelectorAll('.bundle-checkbox'));
+      this.products = []
+      this.products.push(this.mainProduct)
+      this.querySelectorAll('.bundle-checkbox').forEach((element) => {
+          if (element.checked == true) {
+              console.log(element);
+              this.products.push(element.value)
+              console.log(this.products);
+          }
+      })
+
+      const handleClick = () => {
+          this.addToCart(this.products);
+      };
+
+      document.querySelector('#bundle__atc').addEventListener('click', handleClick);
+  }
+
+  addToCart(variants) {
+      let cart=document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+      let formData = {
+        "items": variants.map((variantId) => {
+          let item = {
+              "id": variantId,
+              "quantity": 1
+          };
+
+          if (variantId !== this.mainProduct) {
+              item.properties = {
+                  'product_bundle': 'bundle',
+                  'bundle_id': variantId
+              };
+          }
+
+          return item;
+      }),
+          "sections": cart.getSectionsToRender().map((section) => section.id)
+      }
+      console.log(formData);
+
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData),
+      })
+          .then(response => {
+              return response.json();
+          })
+          .then(response=>
+              {
+                  cart.renderContents(response);
+              })
+          .catch((error) => {
+              console.error('Error:', error);
+          });
+
+
+  }
+
 }
 
-customElements.define('add-to-cart', addToCart);
+customElements.define('product-bundle', ProductBundle);
+
+
+document.getElementById("remove-all-bundles-btn").addEventListener("click",()=>{
+  // document.querySelectorAll("")
+  function removeProductFromCart(variantId) {
+    let cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+    console.log(cart);
+
+    cart.state.items.forEach(item => {
+        if (item.properties && item.properties.variant_id === variantId) {
+            fetch(window.Shopify.routes.root + 'cart/change.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: item.key,
+                    quantity: 0 // Setting quantity to 0 removes the item from the cart
+                })
+            })
+            .then(response => response.json())
+            .then(response => {
+                cart.renderContents(response);
+            })
+            .catch(error => {
+                console.error('Error removing product from cart:', error);
+            });
+        }
+    });
+}
+
+// Example usage:
+// Assuming you have the variant ID of the product to remove
+const variantIdToRemove = 'your_variant_id';
+
+// Assuming you have a button with id 'remove_product_button'
+document.querySelector('#remove_product_button').addEventListener('click', () => {
+    removeProductFromCart(variantIdToRemove);
+});
+
+})
+
+
+
+
+
+
+// let selectedBundles = [];
+
+// class ProductBundle extends HTMLElement {
+//   constructor() {
+//       super();
+//       this.addEventListener('click', this.bundleAddtocart)
+//       this.sectionId = this.dataset.sectionId
+//       this.mainProduct=this.dataset.mainProduct
+//   }
+
+//   bundleAddtocart() {
+//       console.log(this.querySelectorAll('.bundle-checkbox'));
+//       let products = []
+//       products.push(this.mainProduct)
+//       this.querySelectorAll('.bundle-checkbox').forEach((element) => {
+//           if (element.checked == true) {
+//               console.log(element);
+//               products.push(element.value)
+//               console.log(products);
+//           }
+//       });
+
+//       selectedBundles.push(...products);
+//       console.log(selectedBundles);
+
+//       const handleClick = () => {
+//           this.addToCart(products);
+//       };
+
+//       document.querySelector('#bundle__atc').addEventListener('click', handleClick);
+//   }
+
+//   addToCart(variants) {
+//       let cart=document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+//       let formData = {
+//           "items": variants.map((variantId) =>
+//           (
+//               {
+//                   "id": variantId,
+//                   "quantity": 1,
+//               }
+//           )),
+//           "sections": cart.getSectionsToRender().map((section) => section.id)
+//       }
+//       console.log(formData);
+
+//       fetch(window.Shopify.routes.root + 'cart/add.js', {
+//           method: 'POST',
+//           headers: {
+//               'Content-Type': 'application/json'
+//           },
+//           body: JSON.stringify(formData),
+//       })
+//           .then(response => {
+//               return response.json();
+//           })
+//           .then(response=>
+//               {
+//                   cart.renderContents(response);
+//               })
+//           .catch((error) => {
+//               console.error('Error:', error);
+//           });
+//   }
+// }
+
+// customElements.define('product-bundle', ProductBundle);

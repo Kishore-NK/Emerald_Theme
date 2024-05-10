@@ -24,19 +24,7 @@
 <noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
-<style>
-  .shopify-section-group-header-group.announcement-bar-section{
-    height: 5px;
-  }
-  .header-wrapper{
-    position: absolute;
-    width: 100%;
-    background: transparent;
-  }
-  .header-wrapper .header{
-    margin-top: 20px;
-  }
-  </style>
+
 <style>
   header-drawer {
     justify-self: start;
@@ -94,6 +82,15 @@
       padding-bottom: 0.5rem;
       padding-top: 0.5rem;
     }
+  }
+  .megamenu-image {
+    height: 300px;
+    width: 300px;
+  }
+  .megamenu-image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
   }
 </style>
 
@@ -182,13 +179,13 @@
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if section.settings.hover_logo_image != blank -%}
+            {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
                 {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ section.settings.hover_logo_image | image_url: width: 600 | image_tag:
+                {{ settings.logo | image_url: width: 600 | image_tag:
                   class: 'header__heading-logo motion-reduce',
                   widths: widths,
                   height: logo_height,
@@ -207,28 +204,117 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
-      endif
-    %}
+    {%if section.settings.menu != blank %}
+      {% if section.settings.menu_type_desktop == 'dropdown' %}
+        {% render 'header-dropdown-menu' %}
+      {% elsif section.settings.menu_type_desktop != 'drawer' %}
+        <nav class="header__inline-menu">
+          <ul class="list-menu list-menu--inline" role="list">
+            {%- for link in section.settings.menu.links -%}
+              <li>
+                {%- if link.links != blank -%}
+                  <header-menu>
+                    <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+                      <summary
+                        id="HeaderMenu-{{ link.handle }}"
+                        class="header__menu-item list-menu__item link focus-inset"
+                      >
+                        <span
+                          {%- if link.child_active %}
+                            class="header__active-menu-item"
+                          {% endif %}
+                        >
+                          {{- link.title | escape -}}
+                        </span>
+                        {% render 'icon-caret' %}
+                      </summary>
+                      <div
+                        id="MegaMenu-Content-{{ forloop.index }}"
+                        class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                        tabindex="-1"
+                      >
+                        <ul
+                          class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                          role="list"
+                        >
+                          {%- for childlink in link.links -%}
+                            <li>
+                              <a
+                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                                href="{{ childlink.url }}"
+                                class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                                {% if childlink.current %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                {{ childlink.title | escape }}
+                              </a>
+                              {%- if childlink.links != blank -%}
+                                <ul class="list-unstyled" role="list">
+                                  {%- for grandchildlink in childlink.links -%}
+                                    <li>
+                                      <a
+                                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                        href="{{ grandchildlink.url }}"
+                                        class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                        {% if grandchildlink.current %}
+                                          aria-current="page"
+                                        {% endif %}
+                                      >
+                                        {{ grandchildlink.title | escape }}
+                                      </a>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                              {%- endif -%}
+                            </li>
+                          {%- endfor -%}
+                          {% for block in section.blocks %}
+                            {% if link.title == block.settings.megamenu_name %}
+                              <div class="megamenu-image">{% render 'responsive-picture', desktopImage: block.settings.megamenu_image %}</div>
+                            {% endif %}
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </details>
+                  </header-menu>
+                {%- else -%}
+                  <a
+                    id="HeaderMenu-{{ link.handle }}"
+                    href="{{ link.url }}"
+                    class="header__menu-item list-menu__item link link--text focus-inset"
+                    {% if link.current %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    <span
+                      {%- if link.current %}
+                        class="header__active-menu-item"
+                      {% endif %}
+                    >
+                      {{- link.title | escape -}}
+                    </span>
+                  </a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {% endif %}
+    {% endif %}
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if section.settings.hover_logo_image != blank -%}
+            {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
                 {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ section.settings.hover_logo_image | image_url: width: 600 | image_tag:
+                {{ settings.logo | image_url: width: 600 | image_tag:
                   class: 'header__heading-logo',
                   widths: widths,
                   height: logo_height,
@@ -457,7 +543,7 @@
       this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
       this.disclosures.forEach(disclosure => disclosure.close());
     }
-
+    
     closeSearchModal() {
       this.searchModal = this.searchModal || this.header.querySelector('details-modal');
       this.searchModal.close(false);
@@ -472,8 +558,8 @@
     "@context": "http://schema.org",
     "@type": "Organization",
     "name": {{ shop.name | json }},
-    {% if section.settings.hover_logo_image %}
-      "logo": {{ section.settings.hover_logo_image | image_url: width: 500 | prepend: "https:" | json }},
+    {% if settings.logo %}
+      "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
     "sameAs": [
       {{ settings.social_twitter_link | json }},
@@ -664,6 +750,25 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 20
+    }
+  ],
+  "blocks":[
+    {
+      "type":"Image",
+      "name":"Image",
+      "settings":[
+        {
+          "type":"text",
+          "id":"megamenu_name",
+          "label":"Menu name",
+          "info":"Add a name on which matches with the menu title"
+        },
+         {
+          "type":"image_picker",
+          "id":"megamenu_image",
+          "label":"Featured image"
+        }
+      ]
     }
   ],
   "presets": [ 

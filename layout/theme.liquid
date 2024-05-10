@@ -358,5 +358,17 @@
 
     <script src={{ "splide.min.js" | asset_url }}></script>
 
+    {% if template == 'index' %}
+      {% style %}
+        .header-wrapper{
+            position: absolute;
+            width: 100%;
+            background: transparent;
+        }
+        .header-wrapper .header{
+            margin-top: 20px;
+        }
+      {% endstyle %}
+    {% endif %}
   </body>
 </html>
