@@ -244,3 +244,77 @@ if (!customElements.get('cart-note')) {
     }
   );
 }
+
+
+// document.getElementById("remove-all-bundles-btn").addEventListener("click",()=>{
+//   console.log("hi");
+//   fetch(window.Shopify.routes.root + 'cart.js')
+//   .then(response => response.json())
+//   .then(cart => {
+//     cart.items.forEach(item => {
+//       if (item.properties && item.properties.product_bundle) {
+//         fetch(window.Shopify.routes.root + 'cart/update.js', {
+//           method: 'POST',
+//           headers: {
+//             'Content-Type': 'application/json'
+//           },
+//           body: JSON.stringify({
+//             updates: {
+//               [item.key]: 0 
+//             }
+//           })
+//         })
+//         .then(response => response.json())
+//         .then(response => {
+//           console.log('Quantity updated to zero for item with bundle:', item);
+//           window.location.reload();
+//         })
+//         .catch(error => {
+//           console.error('Error updating quantity for item:', item, error);
+//         });
+//       }
+//     });
+//   })
+//   .catch(error => {
+//     console.error('Error fetching cart data:', error);
+//   });
+
+// })
+
+
+document.getElementById("remove-all-bundles-btn").addEventListener("click", () => {
+  console.log("Removing all items with bundle property...");
+  fetch(window.Shopify.routes.root + 'cart.js')
+    .then(response => response.json())
+    .then(cart => {
+      const itemsToUpdate = cart.items.filter(item => item.properties && item.properties.product_bundle);
+
+      if (itemsToUpdate.length > 0) {
+        const updates = {};
+        itemsToUpdate.forEach(item => {
+          updates[item.key] = 0; 
+        });
+
+        fetch(window.Shopify.routes.root + 'cart/update.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ updates })
+        })
+        .then(response => response.json())
+        .then(updatedCart => {
+          console.log('Quantity updated to zero for items with bundle property:', itemsToUpdate);
+          window.location.reload(); 
+        })
+        .catch(error => {
+          console.error('Error updating quantities:', error);
+        });
+      } else {
+        console.log('No items with bundle property found in the cart.');
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching cart data:', error);
+    });
+});

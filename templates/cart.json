@@ -13,13 +13,11 @@
       "blocks": {
         "subtotal": {
           "type": "subtotal",
-          "disabled": true,
           "settings": {
           }
         },
         "buttons": {
           "type": "buttons",
-          "disabled": true,
           "settings": {
           }
         }
