@@ -460,7 +460,7 @@
               <textarea rows="6"  class="custom-shipping-container--message-area" placeholder="Order special instruction"></textarea>
             </div>  
             
-            {%- for item in cart.items -%}
+            {% comment %} {%- for item in cart.items -%}
             <div class="cart-item__price-wrapper">
               <p>Total</p>
               {%- if item.original_line_price != item.final_line_price -%}
@@ -501,7 +501,8 @@
                 </div>
               {%- endif -%}
             </div>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
+            <p>Total {{ cart.total_price | money_with_currency }}</p>
             
             <button
               type="submit"

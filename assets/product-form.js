@@ -31,6 +31,25 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
+        let bundleProductIds = new Set(); // To ensure unique bundles are added
+  
+        // Collect selected bundle items
+        const checkedBundles = document.querySelectorAll('.bundle-checkbox:checked');
+        checkedBundles.forEach((checkbox) => {
+          const productId = checkbox.dataset.productId;
+          if (!bundleProductIds.has(productId)) {
+            formData.append('items[][id]', productId);
+            formData.append('items[][quantity]', 1); // Adjust quantity accordingly
+            formData.append('items[][properties[product_bundle]]', 'bundle'); 
+            bundleProductIds.add(productId);
+          }
+        });
+      
+        // Add the bundle property if any bundle items exist
+        if (bundleProductIds.size > 0) {
+          formData.append('properties[product_bundle]', 'main bundle');
+        }
+
         if (this.cart) {
           formData.append(
             'sections',
