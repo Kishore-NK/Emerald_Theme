@@ -3883,3 +3883,10 @@ details-disclosure > details {
     animation: moveBackward 0.3s ease-in-out forwards;
   }
 
+
+
+
+
+  .remove-btn {
+    background: #8d5d48;
+  }

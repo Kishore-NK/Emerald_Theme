@@ -103,6 +103,17 @@ class CartItems extends HTMLElement {
     ];
   }
 
+  renderContent(parsedState){
+    this.getSectionsToRender().forEach((section) => {
+      const elementToReplace =
+        document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+      elementToReplace.innerHTML = this.getSectionInnerHTML(
+        parsedState.sections[section.section],
+        section.selector
+      );
+    });
+  }
+
   updateQuantity(line, quantity, name, variantId) {
     this.enableLoading(line);
 
@@ -287,6 +298,7 @@ document.getElementById("remove-all-bundles-btn").addEventListener("click", () =
   fetch(window.Shopify.routes.root + 'cart.js')
     .then(response => response.json())
     .then(cart => {
+      let cartPage = document.querySelector("cart-items")
       const itemsToUpdate = cart.items.filter(item => item.properties && item.properties.product_bundle);
 
       if (itemsToUpdate.length > 0) {
@@ -300,12 +312,13 @@ document.getElementById("remove-all-bundles-btn").addEventListener("click", () =
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ updates })
+          body: JSON.stringify({ updates, sections:cartPage.getSectionsToRender().map((section)=> section.section)  })
         })
         .then(response => response.json())
-        .then(updatedCart => {
+        .then(response => {
           console.log('Quantity updated to zero for items with bundle property:', itemsToUpdate);
-          window.location.reload(); 
+          cartPage.renderContent(response)
+          // window.location.reload(); 
         })
         .catch(error => {
           console.error('Error updating quantities:', error);
